@@ -1,0 +1,37 @@
+/* display: table; */
+/* position: relative; */
+
+.filterContainer{
+    /* border: 1px solid black; */
+    /* width: 24%; */
+    width: 300px;
+    margin-top: 10px;
+    padding: 10px 24px 8px;
+    /* display: subgrid; */
+}
+.filterContainer>div{
+    margin-top:4px;
+    /* border: 1px solid black; */
+}
+.filterHeading{
+    color: #091e42 !important;
+    font-weight: 500;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    margin-top: 5px;
+    color: #091E42;
+    width: 100%;
+    padding: 10px 24px 8px;
+    background-color: white;
+}
+
+.checkbox{ 
+    padding: 0px 24px 8px;
+    background-color: white;
+    font-size: 14px;
+    font-family: Roboto,sans-serif;
+    color: #536777;
+}
