@@ -4,16 +4,20 @@ import {
   ChakraProvider,
   theme,
 } from '@chakra-ui/react';
+
 import { SearchPage } from './Components/search Page/searchPage';
 import { store } from './Redux/store';
+
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
+
       <Provider store={store} >
 
       <SearchPage/>
       </Provider>
+
     </ChakraProvider>
   );
 }
