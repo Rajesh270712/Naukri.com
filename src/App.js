@@ -5,8 +5,8 @@ import {
   theme,
 } from '@chakra-ui/react';
 
-import { SearchPage } from './Components/search Page/searchPage';
 import { store } from './Redux/store';
+import { SearchPage } from './Pages/search Page/searchPage';
 
 
 function App() {
