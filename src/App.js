@@ -3,9 +3,10 @@ import { Provider } from 'react-redux';
 import {
   ChakraProvider,
 } from '@chakra-ui/react';
-import { SearchPage } from './Components/search Page/searchPage';
-import { store } from './Redux/store';
 import { UserHomePage} from "./Pages/UserHomePage";
+import { store } from './Redux/store';
+import { SearchPage } from './Pages/search Page/searchPage';
+
 
 
 function App() {
