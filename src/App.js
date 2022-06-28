@@ -2,22 +2,19 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import {
   ChakraProvider,
-  theme,
 } from '@chakra-ui/react';
-
 import { SearchPage } from './Components/search Page/searchPage';
 import { store } from './Redux/store';
+import { UserHomePage} from "./Pages/UserHomePage";
 
 
 function App() {
   return (
-    <ChakraProvider theme={theme}>
-
+    <ChakraProvider >
       <Provider store={store} >
-
-      <SearchPage/>
+      {/* <SearchPage/> */}
+      <UserHomePage/>
       </Provider>
-
     </ChakraProvider>
   );
 }
