@@ -15,7 +15,7 @@ position: relative;
 
 const SearchComponentWrapper = styled.div`
 position: absolute;
-top: 80px;
+top: 50px;
 left: 200px;
 color: white;
 div{
@@ -62,7 +62,7 @@ margin: 0 10%;
 const ProfileBadge = styled.div`
 
 position: absolute;
-top: 115px;
+top: 85px;
 left: 820px;
 background-color: white;
 // background-color: #cecece;
@@ -90,7 +90,7 @@ box-shadow: 0 1px 1px 0 rgb(0 0 0 / 5%), 0 1px 2px 0 rgb(0 0 0 / 10%), 0 2px 20p
 `
 const ProfileImageContainer = styled.div`
     position: absolute;
-    top: 87px;
+    top: 55px;
     left: 940px;
     z-index: 100;
     height: 60px;
