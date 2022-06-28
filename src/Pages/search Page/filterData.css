@@ -4,8 +4,8 @@
 .filterContainer{
     /* border: 1px solid black; */
     /* width: 24%; */
-    width: 300px;
-    margin-top: 10px;
+    width: 356px;
+    margin-top: 4px;
     padding: 10px 24px 8px;
     /* display: subgrid; */
 }
@@ -31,7 +31,7 @@
 .checkbox{ 
     padding: 0px 24px 8px;
     background-color: white;
-    font-size: 14px;
+    font-size: 16px ;
     font-family: Roboto,sans-serif;
     color: #536777;
 }
