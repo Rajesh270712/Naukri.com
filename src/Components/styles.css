@@ -1,0 +1,16 @@
+.slide {
+    font-family: sans-serif;
+    display: flex;
+    height: 200px;
+    align-items: center;
+    justify-content: space-around;
+    /* border: 1px solid black; */
+  
+  }
+  
+  .perdiv{
+    padding-left: 20px;
+    padding-top: 15px;
+    text-align: start;
+  }
+  
