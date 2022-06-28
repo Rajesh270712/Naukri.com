@@ -1,4 +1,4 @@
-import { GET_INPUT_DATA, SORT_BY_CATEGORY, SORT_BY_JOB_TYPE, SORT_BY_LOCATION } from "./action"
+import { GET_INPUT_DATA, SORT_BY_CATEGORY, SORT_BY_JOB_TYPE, SORT_BY_LOCATION, SORT_BY_TECH_STACK } from "./action"
 
 let initState ={
     searchData:[]
@@ -32,6 +32,17 @@ export const searchReducer =(state=initState, {type,payload}) => {
                 ...state,
                 searchData : state.searchData.filter((job)=>(
                     job.category===payload ? [job] : null
+                ))
+            }
+        }
+        case SORT_BY_TECH_STACK:{
+            return{
+                ...state,
+                searchData : state.searchData.filter((job)=>(
+                    job.tags.map((jobTag)=> (
+                        jobTag===payload ? [job] : null
+                    ))
+                    // job.category===payload ? [job] : null
                 ))
             }
         }
