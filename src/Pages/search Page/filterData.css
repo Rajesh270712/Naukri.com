@@ -7,6 +7,7 @@
     width: 356px;
     margin-top: 4px;
     padding: 10px 24px 8px;
+    position: relative;
     /* display: subgrid; */
 }
 .filterContainer>div{
