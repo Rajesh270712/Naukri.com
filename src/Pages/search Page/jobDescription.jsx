@@ -1,6 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
 
