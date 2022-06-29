@@ -1,5 +1,9 @@
 import React from 'react';
 import { Provider } from 'react-redux';
+
+import { UserHomePage} from "./Pages/UserHomePage";
+
+
 import { ChakraProvider, theme } from '@chakra-ui/react';
 import { Routes, Route } from 'react-router-dom';
 import {SearchPage} from "./Pages/search Page/searchPage"
