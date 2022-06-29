@@ -7,13 +7,16 @@
     width: 356px;
     margin-top: 4px;
     padding: 10px 24px 8px;
+    position: relative;
     /* display: subgrid; */
 }
 .filterContainer>div{
     margin-top:4px;
+    position: relative;
     /* border: 1px solid black; */
 }
 .filterHeading{
+    position: relative;
     color: #091e42 !important;
     font-weight: 500;
     overflow: hidden;
