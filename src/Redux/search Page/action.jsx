@@ -2,6 +2,7 @@ export const GET_INPUT_DATA = "GET_INPUT_DATA";
 export const SORT_BY_LOCATION = "SORT_BY_LOCATION"
 export const SORT_BY_JOB_TYPE = "SORT_BY_JOB_TYPE"
 export const SORT_BY_CATEGORY = "SORT_BY_CATEGORY"
+export const SORT_BY_TECH_STACK ="SORT_BY_TECH_STACK"
 export const getInputData =(payload) => {
     return{
         type:GET_INPUT_DATA,
@@ -27,4 +28,12 @@ export const sortByCategory =(payload) => {
         payload
     }
 }
+
+export const sortByTechStack = (payload) => {
+    return{
+        type: SORT_BY_TECH_STACK,
+        payload
+    }
+}
+
 
