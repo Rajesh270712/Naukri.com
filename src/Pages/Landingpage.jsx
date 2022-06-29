@@ -9,15 +9,51 @@ import { Slider2 } from "./Slider2";
 import { Slider3 } from "./Slider3";
 import { Slider4 } from "./Slider4";
 import { Link } from "react-router-dom";
+import "./chatbot.css"
 // import { Navbar } from "./Navbar1";
 
 const LandingPage1 = () => {
+  const [show,setShow]=React.useState(false)
+
+function closePopup(){
+  // this.parentNode.style.display = 'none';
+
+  setShow(true)
+
+
+}
+
+function changeStatus(){
+  setShow(false)
+    document.querySelector(".collapseMsgWrapper").innerHTML=""
+}
+
+function displayMessage(){
+  // document.getElementsByClassName("collapseMsgWrapper").style.display="block"
+   if(show){
+   setShow(false)
+   }
+   else{
+    setShow(true)
+   }
+
+}
+
+
+
+
   return (
-    <Box>
-      {/* <Navbar></Navbar> */}
-      
-      <Box display={"flex"} margin={"auto"}>
-        <Heading as="h1" style={{fontFamily:"Georgia, serif", margin: "auto" }}>
+  
+    <Box background={"#fff"}
+    font-family= {"Inter"}>
+         <Box display={"flex"} margin={"auto"}  text-align={"center"} >
+        <Heading as="h1" style={{fontWeight: "700",
+    fontSize: "35px",
+    lineHeight: "50px",
+    color: "#1b2437",
+    marginTop: "30px",
+    margin:"auto",
+   fontFamily: "Roboto Slab" }}>
           Find your dream job now
         </Heading>
     
@@ -128,7 +164,51 @@ const LandingPage1 = () => {
             Register for free
           </Button>
         </Box>
+        
       </Box>
+
+      <div class="chatbotPopUp">
+
+
+      {  show?<div class="botmain">
+        <div id="botTop"><div><img src="https://static.naukimg.com/s/7/103/i/botIcon.9ccc1ddd.svg"/></div><div><img onClick={changeStatus} src="//static.naukimg.com/s/7/103/i/cross.8cd86aaf.svg"/></div></div>
+           <div>Hi! I am Naukri’s smart job search assistant!</div>
+           <div>
+                I see that you are looking for jobs.
+                New jobs are posted on Naukri every day.
+            </div>
+           <div>Please click on register and create an account to get the most out of Naukri!</div>
+           <button>Register</button>
+           </div>
+           :
+          //  <p>hello</p>
+        
+             <div class="collapseMsgWrapper">
+
+                  <div   class="crossWrapper"><img class="crossIcon" onClick={closePopup} src="//static.naukimg.com/s/7/103/i/cross.8cd86aaf.svg" /> </div>
+             
+                  <div class="collapseBotItem"><span class="botText">Want to apply to jobs? Register now!</span> </div>
+                  {/* <div class="collapseBotChips"> 
+
+               <button class="singleSelectChip" >Register Now</button> 
+                 </div>  */}
+               </div>
+                      
+                
+  }
+         
+     
+        <div class="floatIcon" onClick={displayMessage}>
+              <div class="floatingChatIcon">
+                  <div class="chatbotOnline">
+                        <div class="online"></div>
+                  </div>
+                  <img src="//static.naukimg.com/s/7/103/i/naukriIcon.74e6a29a.png"  class="chatbotNaukIcon" />
+              </div>
+          </div>
+
+      </div>
+      
 
       <Heading
         as="h4"
@@ -146,9 +226,9 @@ const LandingPage1 = () => {
         p={"1%"}
         className={styles.jobsButton}
       >
-        <Button style={{boxShadow: "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset"}}>Full Stack Developer(308)</Button>
-        <Button style={{boxShadow: "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset"}}> Front End Developer(55)</Button>
-        <Button style={{boxShadow: "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset"}}>Back End Developer(89)</Button>
+        <Button style={{boxShadow: "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset",padding:"0px 20px 0px 20px"}}>Full Stack Developer(308)</Button>
+        <Button style={{boxShadow: "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset",padding:"0px 20px 0px 20px"}}> Front End Developer(55)</Button>
+        <Button style={{boxShadow: "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset",padding:"0px 20px 0px 20px"}}>Back End Developer(89)</Button>
       </Box>
       <Slider></Slider>
       <Heading as="h4" textAlign={"center"} padding={"50px"} fontSize={"30px"}>
