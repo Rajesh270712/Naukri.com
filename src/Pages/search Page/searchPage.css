@@ -4,7 +4,7 @@ body {
 
 .searchResultContainer {
   /* border: 1px solid; */
-
+  position: absolute;
   display:flex ;
   flex-direction: row;
   margin-left: 2.6%;

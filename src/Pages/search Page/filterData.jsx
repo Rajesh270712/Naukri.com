@@ -27,7 +27,7 @@ const FilterData = ({
         <Text className="filterHeading">Location</Text>
         <Box className="checkbox">
           <Checkbox
-            onChange={(e) => handleLocationChange('Worldwide', e)}
+            onChange={e => handleLocationChange('Worldwide', e)}
             border="1px grey"
             spacing="1rem"
             size="md"
@@ -37,7 +37,7 @@ const FilterData = ({
           </Checkbox>{' '}
           <br />
           <Checkbox
-            onChange={(e) => handleLocationChange('UK', e)}
+            onChange={e => handleLocationChange('UK', e)}
             border="1px grey"
             spacing="1rem"
             size="md"
@@ -47,7 +47,7 @@ const FilterData = ({
           </Checkbox>{' '}
           <br />
           <Checkbox
-            onChange={(e) => handleLocationChange('Europe', e)}
+            onChange={e => handleLocationChange('Europe', e)}
             border="1px grey"
             spacing="1rem"
             size="md"
@@ -57,7 +57,7 @@ const FilterData = ({
           </Checkbox>{' '}
           <br />
           <Checkbox
-            onChange={(e) => handleLocationChange('Americas', e)}
+            onChange={e => handleLocationChange('Americas', e)}
             border="1px grey"
             spacing="1rem"
             size="md"
@@ -77,7 +77,7 @@ const FilterData = ({
               <PopoverCloseButton />
               <PopoverBody>
                 <Checkbox
-                  onChange={(e) => handleLocationChange('USA Only',e)}
+                  onChange={e => handleLocationChange('USA Only', e)}
                   border="1px grey"
                   spacing="1rem"
                   size="md"
@@ -87,7 +87,7 @@ const FilterData = ({
                 </Checkbox>{' '}
                 <br />
                 <Checkbox
-                  onChange={(e) => handleLocationChange('India',e)}
+                  onChange={e => handleLocationChange('India', e)}
                   border="1px grey"
                   spacing="1rem"
                   size="md"
@@ -97,7 +97,7 @@ const FilterData = ({
                 </Checkbox>{' '}
                 <br />
                 <Checkbox
-                  onChange={(e) => handleLocationChange('LATAM',e)}
+                  onChange={e => handleLocationChange('LATAM', e)}
                   border="1px grey"
                   spacing="1rem"
                   size="md"
@@ -107,7 +107,7 @@ const FilterData = ({
                 </Checkbox>{' '}
                 <br />
                 <Checkbox
-                  onChange={(e) => handleLocationChange('Slovenia',e)}
+                  onChange={e => handleLocationChange('Slovenia', e)}
                   border="1px grey"
                   spacing="1rem"
                   size="md"
@@ -125,7 +125,7 @@ const FilterData = ({
         <Text className="filterHeading">Role Category</Text>
         <Box className="checkbox">
           <Checkbox
-            onChange={(e) => handleCategoryChange('QA',e)}
+            onChange={e => handleCategoryChange('QA', e)}
             border="1px grey"
             spacing="1rem"
             size="md"
@@ -135,7 +135,7 @@ const FilterData = ({
           </Checkbox>{' '}
           <br />
           <Checkbox
-            onChange={(e) => handleCategoryChange('Software Development',e)}
+            onChange={e => handleCategoryChange('Software Development', e)}
             border="1px grey"
             spacing="1rem"
             size="md"
@@ -145,7 +145,7 @@ const FilterData = ({
           </Checkbox>{' '}
           <br />
           <Checkbox
-            onChange={(e) => handleCategoryChange('Design',e)}
+            onChange={e => handleCategoryChange('Design', e)}
             border="1px grey"
             spacing="1rem"
             size="md"
@@ -160,7 +160,7 @@ const FilterData = ({
         <Text className="filterHeading">Job Type</Text>
         <Box className="checkbox">
           <Checkbox
-            onChange={(e) => handleJobTypeChange('full_time',e)}
+            onChange={e => handleJobTypeChange('full_time', e)}
             border="1px grey"
             spacing="1rem"
             size="md"
@@ -170,7 +170,7 @@ const FilterData = ({
           </Checkbox>{' '}
           <br />
           <Checkbox
-            onChange={(e) => handleJobTypeChange('part_time',e)}
+            onChange={e => handleJobTypeChange('part_time', e)}
             border="1px grey"
             spacing="1rem"
             size="md"
@@ -180,7 +180,7 @@ const FilterData = ({
           </Checkbox>{' '}
           <br />
           <Checkbox
-            onChange={(e) => handleJobTypeChange('contract',e)}
+            onChange={e => handleJobTypeChange('contract', e)}
             border="1px grey"
             spacing="1rem"
             size="md"
@@ -196,7 +196,7 @@ const FilterData = ({
         <Text className="filterHeading">Tech Stacks</Text>
         <Box className="checkbox">
           <Checkbox
-            onChange={(e) => handleTechStackChange('react',e)}
+            onChange={e => handleTechStackChange('react', e)}
             border="1px grey"
             spacing="1rem"
             size="md"
@@ -206,7 +206,7 @@ const FilterData = ({
           </Checkbox>{' '}
           <br />
           <Checkbox
-            onChange={(e) => handleTechStackChange('javascript',e)}
+            onChange={e => handleTechStackChange('javascript', e)}
             border="1px grey"
             spacing="1rem"
             size="md"
@@ -216,7 +216,7 @@ const FilterData = ({
           </Checkbox>{' '}
           <br />
           <Checkbox
-            onChange={(e) => handleTechStackChange('redux',e)}
+            onChange={e => handleTechStackChange('redux', e)}
             border="1px grey"
             spacing="1rem"
             size="md"
@@ -226,7 +226,7 @@ const FilterData = ({
           </Checkbox>{' '}
           <br />
           <Checkbox
-            onChange={(e) => handleTechStackChange('ruby',e)}
+            onChange={e => handleTechStackChange('ruby', e)}
             border="1px grey"
             spacing="1rem"
             size="md"
@@ -246,7 +246,7 @@ const FilterData = ({
               <PopoverCloseButton />
               <PopoverBody>
                 <Checkbox
-                  onChange={(e) => handleTechStackChange('angular',e)}
+                  onChange={e => handleTechStackChange('angular', e)}
                   border="1px grey"
                   spacing="1rem"
                   size="md"
@@ -256,7 +256,7 @@ const FilterData = ({
                 </Checkbox>{' '}
                 <br />
                 <Checkbox
-                  onChange={(e) => handleTechStackChange('python',e)}
+                  onChange={e => handleTechStackChange('python', e)}
                   border="1px grey"
                   spacing="1rem"
                   size="md"
@@ -266,7 +266,7 @@ const FilterData = ({
                 </Checkbox>{' '}
                 <br />
                 <Checkbox
-                  onChange={(e) => handleTechStackChange('UI/UX',e)}
+                  onChange={e => handleTechStackChange('UI/UX', e)}
                   border="1px grey"
                   spacing="1rem"
                   size="md"
