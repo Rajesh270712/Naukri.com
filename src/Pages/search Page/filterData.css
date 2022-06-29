@@ -4,19 +4,34 @@
 .filterContainer{
     /* border: 1px solid black; */
     /* width: 24%; */
-    width: 356px;
+     top: 0;
+    bottom:0;
+    position:fixed;
+    overflow-y:scroll;
+    overflow-x:hidden; 
+
+    /* position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
+    top:0; */
+
+
+    width: 350px;
     margin-top: 4px;
     padding: 10px 24px 8px;
-    position: relative;
+
     /* display: subgrid; */
 }
 .filterContainer>div{
+    /* position: -webkit-sticky;
+    position: sticky;
+    top: 0; */
     margin-top:4px;
-    position: relative;
+
     /* border: 1px solid black; */
 }
 .filterHeading{
-    position: relative;
+   
     color: #091e42 !important;
     font-weight: 500;
     overflow: hidden;

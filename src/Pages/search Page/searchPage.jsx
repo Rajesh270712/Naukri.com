@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Icon } from '@chakra-ui/react';
+import { Center, Icon } from '@chakra-ui/react';
 import { BsBriefcase } from 'react-icons/bs';
 import { GoLocation } from 'react-icons/go';
 import { GrDocumentText } from 'react-icons/gr';
-import { StarIcon } from '@chakra-ui/icons';
+import { ChevronLeftIcon, ChevronRightIcon, StarIcon } from '@chakra-ui/icons';
 import { useNavigate } from 'react-router-dom';
 import {
   getInputData,
@@ -27,13 +27,28 @@ export const SearchPage = () => {
   const searchInput = 'frontend';
   const [searchResult, setSearchResult] = useState([]);
   const { searchData } = useSelector(state => state);
+  const [page, setPage] = useState(1)
+  const [lowerBound, setLowerBound] = useState(1)
+  const [upperBound, setUpperBound] = useState(15)
+  console.log(lowerBound,upperBound)
 
+  function handleNextButton(){
+    setPage(page+1)
+    setLowerBound(lowerBound+15)
+    setUpperBound(upperBound+15)
+  }
+  function handlePrevButton(){
+    setPage(page-1)
+    setLowerBound(lowerBound-15)
+    setUpperBound(upperBound-15)
+  }
+  console.log(lowerBound,upperBound);
   const dispatch = useDispatch();
   useEffect(() => {
     const fetchSearchInput = async () => {
       try {
         let fetchData = await fetch(
-          `https://remotive.com/api/remote-jobs?search=${searchInput}&limit=100`
+          `https://remotive.com/api/remote-jobs?search=${searchInput}&limit=105`
         );
         let result = await fetchData.json();
         setSearchResult(result.jobs);
@@ -82,11 +97,11 @@ export const SearchPage = () => {
       </div>
 
       <GridItem>
-        <Text ml={2} className="searchPara">
+        <Text ml="365px" className="searchPara">
           {' '}
-          1 - 20 of 101 {searchInput} Jobs
+          {lowerBound} - {upperBound} of 105 {searchInput} Jobs
         </Text>
-        {searchData.slice(0, 15).map(job => (
+        {searchData.slice(lowerBound, upperBound).map(job => (
           <div
             onClick={() => handleClick(job.id)}
             key={job.id}
@@ -131,6 +146,12 @@ export const SearchPage = () => {
             </HStack>
           </div>
         ))}
+          <Center ml={350} >
+      <Button disabled={lowerBound===1} onClick={handlePrevButton} className='paginationButton' colorScheme='blue' variant='outline' > <ChevronLeftIcon /> PREVIOUS</Button>
+      <Button colorScheme="blue" >{page}</Button>
+      <Button disabled={upperBound>=75} onClick={handleNextButton} className='paginationButton' colorScheme='blue' variant='outline' >  NEXT <ChevronRightIcon/> </Button>
+
+    </Center>
       </GridItem>
       <GridItem>
         <Box className="naukriAdd">

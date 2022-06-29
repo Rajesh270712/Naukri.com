@@ -16,8 +16,8 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
       <Provider store={store}>
-        <LandingPage1 />
-        <UserHomePage />
+        {/* <LandingPage1 />
+        <UserHomePage /> */}
       <Routes>
         <Route path="/" element={<SearchPage />}></Route>
         <Route path="/jobDescription/:id" element={<JobDescription />}></Route>
