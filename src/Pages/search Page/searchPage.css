@@ -4,6 +4,7 @@ body {
 
 .searchResultContainer {
   /* border: 1px solid; */
+  position: absolute;
   display:flex ;
   flex-direction: row;
   margin-left: 2.6%;
@@ -47,10 +48,32 @@ body {
 }
 
 .searchPara {
-  
   font-weight: 500;
   color: #536777;
   font-size: 13px;
   font-family:  sans-serif;
-  
+}
+
+.naukriAdd{
+  margin-left: 3%;
+  position: fixed;
+  z-index: 1;
+  font-family: Roboto,sans-serif;
+  background: #fff;
+  border-radius: 4px 0 4px 4px;
+  margin-top: 140px;
+  width: 280px;
+  padding: 24px;
+  color: #091E42;
+  font-weight: 500;
+}
+.naukriAdd >img {
+  margin-bottom: 30px;
+}
+.naukriAdd >button {
+  margin-top: 18px;
+  width: 100%;
+  border-radius: 0px;
+  border-color: #4A90A2 !important;
+  color: #4A90A2 !important;
 }

@@ -68,7 +68,7 @@ const LandingPage1 = () => {
       >
         <Box w={"25%"} textAlign={"start"} fontSize={"20px"}>
           <ol style={{ padding: "25px"}} >
-            <li style={{ padding: "3px", color:"black", fontWeight:"bolder"}}>Get discoverd ></li>
+            <li style={{ padding: "3px", color:"black", fontWeight:"bolder"}}>Get discoverd  </li>
             <li style={{ padding: "3px" }}>Get contacted</li>
             <li style={{ padding: "3px" }}>Get hired</li>
           </ol>

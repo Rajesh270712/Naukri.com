@@ -15,7 +15,7 @@ const FilterData = ({
   handleLocationChange,
   handleJobTypeChange,
   handleCategoryChange,
-  handleTechStackChange
+  handleTechStackChange,
 }) => {
   return (
     <Box className="filterContainer">
@@ -27,48 +27,48 @@ const FilterData = ({
         <Text className="filterHeading">Location</Text>
         <Box className="checkbox">
           <Checkbox
-            onChange={() => handleLocationChange('Worldwide')}
+            onChange={e => handleLocationChange('Worldwide', e)}
             border="1px grey"
             spacing="1rem"
             size="md"
             colorScheme="blue"
           >
-            World Wide
+            <Text fontSize="14px">World Wide</Text>
           </Checkbox>{' '}
           <br />
           <Checkbox
-            onChange={() => handleLocationChange('UK')}
+            onChange={e => handleLocationChange('UK', e)}
             border="1px grey"
             spacing="1rem"
             size="md"
             colorScheme="blue"
           >
-            UK
+            <Text fontSize="14px">UK</Text>
           </Checkbox>{' '}
           <br />
           <Checkbox
-            onChange={() => handleLocationChange('Europe')}
+            onChange={e => handleLocationChange('Europe', e)}
             border="1px grey"
             spacing="1rem"
             size="md"
             colorScheme="blue"
           >
-            Europe
+            <Text fontSize="14px">Europe</Text>
           </Checkbox>{' '}
           <br />
           <Checkbox
-            onChange={() => handleLocationChange('Americas')}
+            onChange={e => handleLocationChange('Americas', e)}
             border="1px grey"
             spacing="1rem"
             size="md"
             colorScheme="blue"
           >
-            Americas
+            <Text fontSize="14px">Americas</Text>
           </Checkbox>{' '}
           <br />
           <Popover placement="bottom-start">
             <PopoverTrigger>
-              <Button p={0} bg="white" color="#4A90E2">
+              <Button p={0} fontSize="15px" bg="white" color="#4A90E2">
                 + 4 More{' '}
               </Button>
             </PopoverTrigger>
@@ -77,43 +77,43 @@ const FilterData = ({
               <PopoverCloseButton />
               <PopoverBody>
                 <Checkbox
-                  onChange={() => handleLocationChange('USA Only')}
+                  onChange={e => handleLocationChange('USA Only', e)}
                   border="1px grey"
                   spacing="1rem"
                   size="md"
                   colorScheme="blue"
                 >
-                  USA
+                  <Text fontSize="14px">USA</Text>
                 </Checkbox>{' '}
                 <br />
                 <Checkbox
-                  onChange={() => handleLocationChange('India')}
+                  onChange={e => handleLocationChange('India', e)}
                   border="1px grey"
                   spacing="1rem"
                   size="md"
                   colorScheme="blue"
                 >
-                  India
+                  <Text fontSize="14px">India</Text>
                 </Checkbox>{' '}
                 <br />
                 <Checkbox
-                  onChange={() => handleLocationChange('LATAM')}
+                  onChange={e => handleLocationChange('LATAM', e)}
                   border="1px grey"
                   spacing="1rem"
                   size="md"
                   colorScheme="blue"
                 >
-                  Latam
+                  <Text fontSize="14px">Latam</Text>
                 </Checkbox>{' '}
                 <br />
                 <Checkbox
-                  onChange={() => handleLocationChange('Slovenia')}
+                  onChange={e => handleLocationChange('Slovenia', e)}
                   border="1px grey"
                   spacing="1rem"
                   size="md"
                   colorScheme="blue"
                 >
-                  Slovenia
+                  <Text fontSize="14px">Slovenia</Text>
                 </Checkbox>{' '}
                 <br />
               </PopoverBody>
@@ -125,33 +125,33 @@ const FilterData = ({
         <Text className="filterHeading">Role Category</Text>
         <Box className="checkbox">
           <Checkbox
-            onChange={() => handleCategoryChange('QA')}
+            onChange={e => handleCategoryChange('QA', e)}
             border="1px grey"
             spacing="1rem"
             size="md"
             colorScheme="blue"
           >
-            Quality Engineer
+            <Text fontSize="14px">Quality Engineer</Text>
           </Checkbox>{' '}
           <br />
           <Checkbox
-            onChange={() => handleCategoryChange('Software Development')}
+            onChange={e => handleCategoryChange('Software Development', e)}
             border="1px grey"
             spacing="1rem"
             size="md"
             colorScheme="blue"
           >
-            Software Development
+            <Text fontSize="14px">Software Development</Text>
           </Checkbox>{' '}
           <br />
           <Checkbox
-            onChange={() => handleCategoryChange('Design')}
+            onChange={e => handleCategoryChange('Design', e)}
             border="1px grey"
             spacing="1rem"
             size="md"
             colorScheme="blue"
           >
-            Design
+            <Text fontSize="14px">Design</Text>
           </Checkbox>{' '}
           <br />
         </Box>
@@ -160,33 +160,33 @@ const FilterData = ({
         <Text className="filterHeading">Job Type</Text>
         <Box className="checkbox">
           <Checkbox
-            onChange={() => handleJobTypeChange('full_time')}
+            onChange={e => handleJobTypeChange('full_time', e)}
             border="1px grey"
             spacing="1rem"
             size="md"
             colorScheme="blue"
           >
-            Full Time
+            <Text fontSize="14px">Full Time</Text>
           </Checkbox>{' '}
           <br />
           <Checkbox
-            onChange={() => handleJobTypeChange('part_time')}
+            onChange={e => handleJobTypeChange('part_time', e)}
             border="1px grey"
             spacing="1rem"
             size="md"
             colorScheme="blue"
           >
-            Part Time
+            <Text fontSize="14px">Part Time</Text>
           </Checkbox>{' '}
           <br />
           <Checkbox
-            onChange={() => handleJobTypeChange('contract')}
+            onChange={e => handleJobTypeChange('contract', e)}
             border="1px grey"
             spacing="1rem"
             size="md"
             colorScheme="blue"
           >
-            Contract
+            <Text fontSize="14px">Contract</Text>
           </Checkbox>{' '}
           <br />
         </Box>
@@ -196,48 +196,48 @@ const FilterData = ({
         <Text className="filterHeading">Tech Stacks</Text>
         <Box className="checkbox">
           <Checkbox
-            onChange={() => handleTechStackChange('react')}
+            onChange={e => handleTechStackChange('react', e)}
             border="1px grey"
             spacing="1rem"
             size="md"
             colorScheme="blue"
           >
-            React
+            <Text fontSize="14px">React</Text>
           </Checkbox>{' '}
           <br />
           <Checkbox
-            onChange={() => handleTechStackChange('javascript')}
+            onChange={e => handleTechStackChange('javascript', e)}
             border="1px grey"
             spacing="1rem"
             size="md"
             colorScheme="blue"
           >
-            Javascript
+            <Text fontSize="14px">Javascript</Text>
           </Checkbox>{' '}
           <br />
           <Checkbox
-            onChange={() => handleTechStackChange('redux')}
+            onChange={e => handleTechStackChange('redux', e)}
             border="1px grey"
             spacing="1rem"
             size="md"
             colorScheme="blue"
           >
-            Redux
+            <Text fontSize="14px">Redux</Text>
           </Checkbox>{' '}
           <br />
           <Checkbox
-            onChange={() => handleTechStackChange('ruby')}
+            onChange={e => handleTechStackChange('ruby', e)}
             border="1px grey"
             spacing="1rem"
             size="md"
             colorScheme="blue"
           >
-            Ruby
+            <Text fontSize="14px">Ruby</Text>
           </Checkbox>{' '}
           <br />
           <Popover placement="bottom-start">
             <PopoverTrigger>
-              <Button p={0} bg="white" color="#4A90E2">
+              <Button p={0} fontSize="15px" bg="white" color="#4A90E2">
                 + 4 More{' '}
               </Button>
             </PopoverTrigger>
@@ -246,33 +246,33 @@ const FilterData = ({
               <PopoverCloseButton />
               <PopoverBody>
                 <Checkbox
-                  onChange={() => handleTechStackChange('angular')}
+                  onChange={e => handleTechStackChange('angular', e)}
                   border="1px grey"
                   spacing="1rem"
                   size="md"
                   colorScheme="blue"
                 >
-                  Angular
+                  <Text fontSize="14px">Angular</Text>
                 </Checkbox>{' '}
                 <br />
                 <Checkbox
-                  onChange={() => handleTechStackChange('python')}
+                  onChange={e => handleTechStackChange('python', e)}
                   border="1px grey"
                   spacing="1rem"
                   size="md"
                   colorScheme="blue"
                 >
-                  Python
+                  <Text fontSize="14px">Python</Text>
                 </Checkbox>{' '}
                 <br />
                 <Checkbox
-                  onChange={() => handleTechStackChange('UI/UX')}
+                  onChange={e => handleTechStackChange('UI/UX', e)}
                   border="1px grey"
                   spacing="1rem"
                   size="md"
                   colorScheme="blue"
                 >
-                  UI/UX
+                  <Text fontSize="14px">UI/UX</Text>
                 </Checkbox>{' '}
                 <br />
               </PopoverBody>

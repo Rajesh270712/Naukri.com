@@ -1,30 +1,23 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import {
-  ChakraProvider,
-} from '@chakra-ui/react';
-<<<<<<< HEAD
-import LandingPage1 from "./Components/Landingpage"
-import { SearchPage } from './Components/search Page/searchPage';
-=======
-import { UserHomePage} from "./Pages/UserHomePage";
->>>>>>> ec1f0171ede28077c6352e601a1d6e79648177f0
+import { ChakraProvider, theme } from '@chakra-ui/react';
+import { Routes, Route } from 'react-router-dom';
+import {SearchPage} from "./Pages/search Page/searchPage"
+import LandingPage1 from "./Pages/Landingpage"
+import { UserHomePage } from './Pages/UserHomePage';
 import { store } from './Redux/store';
-import { SearchPage } from './Pages/search Page/searchPage';
-
-
+import JobDescription from './Pages/search Page/jobDescription';
 
 function App() {
   return (
-    <ChakraProvider >
-      <Provider store={store} >
-<<<<<<< HEAD
-      <LandingPage1 />
-      <SearchPage/>
-=======
-      {/* <SearchPage/> */}
-      <UserHomePage/>
->>>>>>> ec1f0171ede28077c6352e601a1d6e79648177f0
+    <ChakraProvider theme={theme}>
+      <Provider store={store}>
+        <LandingPage1 />
+        <UserHomePage />
+      <Routes>
+        <Route path="/" element={<SearchPage />}></Route>
+        <Route path="/jobDescription/:id" element={<JobDescription />}></Route>
+      </Routes>
       </Provider>
     </ChakraProvider>
   );
