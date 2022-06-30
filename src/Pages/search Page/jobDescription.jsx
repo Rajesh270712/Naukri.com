@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 import { GoLocation } from 'react-icons/go';
 import { BiMoney } from 'react-icons/bi';
 import { Box, Heading, Text, HStack, Button } from '@chakra-ui/react';
+import { SideTimePass } from './sideAdd';
 import "./jobDescription.css"
 const JobDescription = () => {
   const { id } = useParams();
@@ -18,8 +19,9 @@ const JobDescription = () => {
     }
   console.log(temp);
   return (
-    <div>
+    <>
         <Box className='topBlueBar'></Box>
+    <HStack className='mainContainer' >
       {temp.map(job => (
         <Box className='companyInfo'  key={job.id}>
           <Box className='topJobSection' >
@@ -52,7 +54,12 @@ const JobDescription = () => {
 
         </Box>
       ))}
-    </div>
+      <Box>
+      <SideTimePass/>
+
+      </Box>
+    </HStack>
+    </>
   );
 };
 

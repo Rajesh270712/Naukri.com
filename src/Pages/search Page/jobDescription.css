@@ -17,11 +17,17 @@ body {
     background-color: #D4E5FF;
    
   }
+  .mainContainer{
+    position: relative;
+    top: 0px !important;
+  }
+  
 .companyInfo{
     /* border: 1px solid; */
-    margin-top: -40px;
+    /* margin-top: -40px; */
     width: 60%;
     margin-left: 10%;
+    /* margin-top: -185px; */
 }
 
 .topJobSection{
@@ -88,3 +94,5 @@ body {
     font-family: sans-serif;
     color: #333;
   }
+
+ 
