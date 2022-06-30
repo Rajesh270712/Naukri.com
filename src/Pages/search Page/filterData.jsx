@@ -11,6 +11,7 @@ import {
   PopoverArrow,
 } from '@chakra-ui/react';
 import './filterData.css';
+
 const FilterData = ({
   handleLocationChange,
   handleJobTypeChange,

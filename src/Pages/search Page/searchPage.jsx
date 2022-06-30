@@ -127,7 +127,7 @@ export const SearchPage = () => {
       </div>
 
       <GridItem>
-        <Text ml="365px" className="searchPara">
+        <Text ml={2} className="searchPara">
           {' '}
           {lowerBound} - {upperBound} of 105 {searchInput} Jobs
         </Text>
@@ -176,7 +176,7 @@ export const SearchPage = () => {
             </HStack>
           </div>
         ))}
-        <Center ml={350}>
+        <Center >
           <Button
             disabled={lowerBound === 1}
             onClick={handlePrevButton}
