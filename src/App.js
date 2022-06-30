@@ -11,12 +11,12 @@ import Footer from "./componentsYashasvi/Footer"
 import Navbar from "./componentsYashasvi/Navbar"
 import JobDescription from './Pages/search Page/jobDescription';
 import {UpdateProfilePage} from "./Pages/UpdateProfilePage"
-
+import {UserHomePage}  from "./Pages/UserHomePage"
 function App() {
   return (
     <ChakraProvider theme={theme}>
       <Provider store={store}>
-
+      <Navbar/>
       <Routes>
         <Route path = "/" element={<LandingPage1 />}></Route>
         <Route path = "/UserHomePage" element = {<UserHomePage />}></Route>

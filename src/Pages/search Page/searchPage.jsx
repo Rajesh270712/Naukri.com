@@ -19,8 +19,10 @@ import { Box, Heading, Text, HStack, GridItem, Button } from '@chakra-ui/react';
 import FilterData from './filterData';
 import './searchPage.css';
 export const SearchPage = () => {
-  const { searchData, loading, error } = useSelector(state => state);
-  const searchInput = 'frontend';
+  const { searchData, loading, error } = useSelector(state => state.search);
+  const { searchQuery } =useSelector(state => state.query)
+
+  const searchInput = searchQuery;
   const [searchResult, setSearchResult] = useState([]);
   const [page, setPage] = useState(1);
   const [lowerBound, setLowerBound] = useState(1);
