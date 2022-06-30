@@ -10,7 +10,7 @@ import { SideTimePass } from './sideAdd';
 import "./jobDescription.css"
 const JobDescription = () => {
   const { id } = useParams();
-  const { searchData } = useSelector(state => state);
+  const { searchData } = useSelector(state => state.search);
 
   let temp = searchData.filter(job => (job.id == id ? { ...job } : null));
     function applyToSite(url)
