@@ -21,10 +21,10 @@ const JobDescription = () => {
   return (
     <>
         <Box className='topBlueBar'></Box>
-    <HStack className='mainContainer' >
+    <HStack alignItems="top" className='mainContainer' >
       {temp.map(job => (
         <Box className='companyInfo'  key={job.id}>
-          <Box className='topJobSection' >
+          <Box  className='topJobSection' >
             <Heading  as="h1">{job.title}</Heading>
             <Text className='companyName' >{job.company_name} 3.7 <StarIcon w={3} marginBottom={1} color="#feaa00" />{' '} </Text>
             <Text className='searchPara' >

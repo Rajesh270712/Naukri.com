@@ -18,8 +18,8 @@ body {
    
   }
   .mainContainer{
-    position: relative;
-    top: 0px !important;
+    margin-top: -50px;
+    
   }
   
 .companyInfo{
