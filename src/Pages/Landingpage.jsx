@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Input, Image, background, color } from "@chakra-ui/react";
+import { Box, Button, Input, Image, Select} from "@chakra-ui/react";
 import { Heading } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 import styles from "./LandingPage1.module.css";
@@ -19,13 +19,11 @@ function closePopup(){
   // this.parentNode.style.display = 'none';
 
   setShow(true)
-
-
 }
 
 function changeStatus(){
   setShow(false)
-    document.querySelector(".collapseMsgWrapper").innerHTML=""
+    
 }
 
 function displayMessage(){
@@ -44,23 +42,35 @@ function displayMessage(){
 
   return (
   
-    <Box background={"#fff"}
-    font-family= {"Inter"}>
+    <Box  color={"#1b2437"} background={ URL="static.naukimg.com/s/7/103/i/homepageBubble.cf43a7a8.svg" }
+    backgroundImage= {URL="https://static.naukimg.com/s/7/103/i/homepageBubble.cf43a7a8.svg"}
+    backgroundPositionX= {"50%"}
+    backgroundPositionY= {"center"}
+    backgroundSize= {"cover"}
+    backgroundRepeatX= {"initial"}
+    backgroundRepeatY= {"initial"}
+    backgroundAttachment={"initial"} 
+    backgroundOrigin= {"initial"}
+    backgroundClip= {"initial"}
+    backgroundColor= {"initial"}
+    fontFamily= {"Inter"}>
+
          <Box display={"flex"} margin={"auto"}  text-align={"center"} >
-        <Heading as="h1" style={{fontWeight: "700",
-    fontSize: "35px",
-    lineHeight: "50px",
-    color: "#1b2437",
-    marginTop: "30px",
-    margin:"auto",
-   fontFamily: "Roboto Slab" }}>
+        <Heading as="h1" font-weight= {"700"}
+               font-size= {"35px"}
+              lineHeight= {"50px"}
+              color= {"#1b2437"}
+              margin-top= {"30px"}
+              margin={"auto"}
+              font-family={"Roboto Slab"} >
           Find your dream job now
         </Heading>
     
-      </Box>
+        </Box>
+
       <br/>
       <Box display={"flex"} margin={"auto"}>
-        <p style={{fontFamily:"inherit", margin: "auto" }}>5 lakh+ jobs for you to explore</p>
+        <p style={{    fontSize: "20px",lineHeight: "24px",color:"#8292b4",fontFamily: "Inter",margin:"auto" }}>5 lakh+ jobs for you to explore</p>
       </Box>
 
       <Box
@@ -69,22 +79,33 @@ function displayMessage(){
         display="flex"
         margin="auto"
         height={"60px"}
-       alignItems={"center"}
-       marginTop="20px"
+        alignItems={"center"}
+        marginTop="20px"
         borderRadius={"27px"}
-        justifyContent={"space-around"}
+        justifyContent={"space-between"}
         boxShadow={" rgba(0, 0, 0, 0.24) 0px 3px 8px;"}
       >
-        <SearchIcon paddingTop={"0.5%"} height={"30px"}  />
-        <Input
+        <SearchIcon paddingTop={"0.5%"} height={"100%"}  />
+        <Box width={"80%"} display={"flex"} justifyContent={"space-between"}>
+        <Input 
           type="text"
-          placeholder="Enter skills / designations / companies"
+          placeholder="Enter skills / designations"
           padding={3}
-          w={"80%"}
+          w={"33%"}
           border={"none"}
+          borderRight={"1px solid lightGrey"}
         />
+        {/* <Box w={"2px"} height={"80%"} backgroundColor={"grey"}></Box> */}
+        <Select placeholder={"Select experience"}  border={"none"} borderBottom={"none"}  color= {"grey"}  width={"30%"}>
+          <option>Fresher</option>
+          <option>1 year</option>
+          <option>2 year</option>
+          
+        </Select>
+        <Input placeholder={"Enter Location"} width={"30%"} border={"none"} borderLeft={"0.5px solid lightGrey"}/>
+        </Box>
 
-        <Button background={"blue.400"} color={"white"} p={4} borderRadius={"20px"} width={"10%"}>
+        <Button background={"blue.400"} color={"white"} p={4} borderRadius={"20px"} width={"13%"} >
           Search
         </Button>
       </Box>
@@ -94,6 +115,7 @@ function displayMessage(){
         h={"200px"}
         margin={"auto"}
         marginTop={"4%"}
+        paddingLeft={"3%"}
         display={"flex"}
         alignItems={"center"}
         borderRadius={"10px"}
@@ -103,10 +125,10 @@ function displayMessage(){
         // padding={"10px"}
       >
         <Box w={"25%"} textAlign={"start"} fontSize={"20px"}>
-          <ol style={{ padding: "25px"}} >
-            <li style={{ padding: "3px", color:"black", fontWeight:"bolder"}}>Get discoverd  </li>
-            <li style={{ padding: "3px" }}>Get contacted</li>
-            <li style={{ padding: "3px" }}>Get hired</li>
+          <ol style={{ padding: "20px"}} >
+            <li style={{ padding: "3%", color:"black", fontWeight:"bolder"}}>Get discoverd ></li>
+            <li style={{ padding: "3%" }}>Get contacted</li>
+            <li style={{ padding: "3%" }}>Get hired</li>
           </ol>
         </Box>
 
@@ -120,10 +142,6 @@ function displayMessage(){
               width={"30%"}
             >
             </Image>
-          
-
-           
-
             
             <Image 
               src={"https://img.naukimg.com/logo_images/groups/v1/4156.gif"}
@@ -209,7 +227,10 @@ function displayMessage(){
 
       </div>
       
-
+      <Heading as="h4" textAlign={"center"} padding={"50px"} fontSize={"30px"}>
+        Trending on Naukri today
+      </Heading>
+      <Slider2></Slider2>
       <Heading
         as="h4"
         textAlign={"center"}
@@ -226,15 +247,12 @@ function displayMessage(){
         p={"1%"}
         className={styles.jobsButton}
       >
-        <Button style={{boxShadow: "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset",padding:"0px 20px 0px 20px"}}>Full Stack Developer(308)</Button>
-        <Button style={{boxShadow: "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset",padding:"0px 20px 0px 20px"}}> Front End Developer(55)</Button>
-        <Button style={{boxShadow: "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset",padding:"0px 20px 0px 20px"}}>Back End Developer(89)</Button>
+        <Button style={{boxShadow: "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset",padding:"0px 20px 0px 20px",color:"gray"}}>Full Stack Developer(308)</Button>
+        <Button style={{boxShadow: "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset",padding:"0px 20px 0px 20px", color:"grey"}}> Front End Developer(55)</Button>
+        <Button style={{boxShadow: "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset",padding:"0px 20px 0px 20px",color:"grey"}}>Back End Developer(89)</Button>
       </Box>
       <Slider></Slider>
-      <Heading as="h4" textAlign={"center"} padding={"50px"} fontSize={"30px"}>
-        Trending on Naukri today
-      </Heading>
-      <Slider2></Slider2>
+      
       <br/>
       <Heading as="h5" textAlign={"center"} padding={"20px"} fontSize={"30px"}>
         Featured companies actively hiring
