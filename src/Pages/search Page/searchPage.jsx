@@ -32,7 +32,7 @@ export const SearchPage = () => {
       try {
         dispatch(isLoading());
         let fetchData = await fetch(
-          `https://remotive.com/api/remote-jobs?search=${searchInput}&limit=105`
+          `https://remotive.com/api/remote-jobs?search=${searchInput}&limit=80`
         );
         let result = await fetchData.json();
         setSearchResult(result.jobs);
@@ -68,7 +68,9 @@ export const SearchPage = () => {
       
     );
   }
-
+  if (error){
+    return <img src='https://user-images.githubusercontent.com/6059356/35678833-80566ce6-075d-11e8-9513-cc3d4233f5b1.gif' />
+  }
   function handleNextButton() {
     dispatch(isLoading());
     setPage(page + 1);
