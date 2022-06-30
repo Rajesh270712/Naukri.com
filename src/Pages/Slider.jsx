@@ -1,6 +1,6 @@
 import Carousel from "react-elastic-carousel";
 // import Item from "./Item";
-import "./styles.css";
+// import "./styles.css";s
 import { Box } from "@chakra-ui/react";
 import { StarIcon } from "@chakra-ui/icons";
 // import {BsFillGeoAltFill} from "react-icons/bs";
@@ -39,15 +39,19 @@ const breakPoints = [
 
 export const Slider=()=> {
   return (
-    <div className="slide">
+    <div style={{  fontFamily: "sansSerif",
+      display: "flex",
+      height: "200px",
+      alignItems: "center",
+      justifyContent: "space-around",}}>
       <Carousel breakPoints={breakPoints}>
         {arr.map((item)=>(
 
         <Item>
         <Box className="perdiv">
           <img style={{height:"70px", width:"70px"}} src={item.image} />
-          <h4>{item.title}</h4>
-          <Box display={'flex'}>
+          <h4 style={{fontWeight:"bolder",fontSize:"17px"}}>{item.title}</h4>
+          <Box display={'flex'}  >
           <p style={{marginRight:"10px"}}>{item.subtitle}</p>
          <Box display={'flex'}>
          <StarIcon color={'orange'}/>

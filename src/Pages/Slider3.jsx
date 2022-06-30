@@ -1,6 +1,6 @@
 import Carousel from "react-elastic-carousel";
 // import Item from "./Item3";
-import "./styles3.css";
+// import "./styles3.css";
 import { Box, Image ,Button} from "@chakra-ui/react";
 import { StarIcon } from "@chakra-ui/icons";
 // import {BsFillGeoAltFill} from "react-icons/bs"
@@ -12,10 +12,9 @@ const Item= styled.div`
   justify-content: center;
   align-items: center;
   height: 250px;
-  width: 100%;
+  width: 90%;
  border-radius:22px;
-  border:0.1px solid gray;
-  // box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+ box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   text-align: center;
  /* :hover{
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -35,26 +34,33 @@ const breakPoints = [
 
 export const Slider3=()=> {
   return (
-    <div className="slide">
+    <div  style={{fontFamily: "sans-serif",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-around",
+    textAlign: "center",
+    marginTop: "20px"}}>
       <Carousel breakPoints={breakPoints}>
         {arr.map((item)=>(
 
         <Item>
-        <Box className="perdiv">
-          <Box display={'flex'} w={"40%"} margin={'auto'}>
+        <Box display={"flex"} flexDirection={"column"} alignItems={"center"} gap={"10px"} >
+            <Box display={'flex'} w={"40%"} margin={'auto'}>
 
-       <Image src={item.image}></Image>
-          </Box>
-      <div>
-        <h4>{item.title}</h4>
+            <Image src={item.image}></Image>
+        </Box>
+      <div style={{backgroundColor:"lightYellow", borderRadius:"5px"}}>
+        <h4 style={{fontWeight:"bolder",fontSize:"17px"}}>{item.title}</h4>
         <p>
             <StarIcon color={'orange'}></StarIcon> {item.reviews}
         </p>
       </div>
       <p>{item.subtitle}</p>
       <Button
-      background={'rgb(241,245,255)'}
+      background={'blue.100'}
+      borderRadius={"20px"}
       color={'blue'}
+      boxShadow={"rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px"}
       >View jobs</Button>
         </Box>
           </Item>
