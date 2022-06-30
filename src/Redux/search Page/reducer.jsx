@@ -1,13 +1,13 @@
 import { GET_INPUT_DATA, SORT_BY_CATEGORY, SORT_BY_JOB_TYPE, SORT_BY_LOCATION, SORT_BY_TECH_STACK } from "./action"
 
-let initState ={
-    searchData:[]
-}
+// let initState ={
+//     searchData:[],
+// }
 
-export const searchReducer =(state=initState, {type,payload}) => {
+export const searchReducer =(state={searchData:[]}, {type,payload}) => {
     switch (type){
         case GET_INPUT_DATA:{
-            return{
+            return{...state,
                 searchData:[...payload]
             }
         }
