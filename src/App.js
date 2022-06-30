@@ -10,17 +10,18 @@ import { store } from './Redux/store';
 import Footer from "./componentsYashasvi/Footer"
 import Navbar from "./componentsYashasvi/Navbar"
 import JobDescription from './Pages/search Page/jobDescription';
+import {UpdateProfilePage} from "./Pages/UpdateProfilePage"
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
       <Provider store={store}>
 
-        <Navbar/>
-         {/* <LandingPage1 /> */}
-        {/*<UserHomePage /> */}
       <Routes>
-        <Route path="/" element={<SearchPage />}></Route>
+        <Route path = "/" element={<LandingPage1 />}></Route>
+        <Route path = "/UserHomePage" element = {<UserHomePage />}></Route>
+        <Route path = "/UpdateProfilePage" element={<UpdateProfilePage/>}></Route>
+        <Route path="/SearchPage" element={<SearchPage />}></Route>
         <Route path="/jobDescription/:id" element={<JobDescription />}></Route>
       </Routes>
       <Footer/>

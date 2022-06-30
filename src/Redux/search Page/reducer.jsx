@@ -1,10 +1,13 @@
 import {  GET_INPUT_DATA, IS_ERROR, IS_LOADING, SORT_BY_CATEGORY, SORT_BY_JOB_TYPE, SORT_BY_LOCATION, SORT_BY_TECH_STACK } from "./action"
 
+
+
 let initState ={
     searchData:[],
     loading:false,
     error:false
 }
+
 
 export const searchReducer =(state=initState, {type,payload}) => {
     switch (type){
