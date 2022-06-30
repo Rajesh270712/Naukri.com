@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Input, Image, background, color } from "@chakra-ui/react";
+import { Box, Button, Input, Image, Select} from "@chakra-ui/react";
 import { Heading } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 import styles from "./LandingPage1.module.css";
@@ -9,22 +9,68 @@ import { Slider2 } from "./Slider2";
 import { Slider3 } from "./Slider3";
 import { Slider4 } from "./Slider4";
 import { Link } from "react-router-dom";
+import "./chatbot.css"
 // import { Navbar } from "./Navbar1";
 
 const LandingPage1 = () => {
+  const [show,setShow]=React.useState(false)
+
+function closePopup(){
+  // this.parentNode.style.display = 'none';
+
+  setShow(true)
+}
+
+function changeStatus(){
+  setShow(false)
+    
+}
+
+function displayMessage(){
+  // document.getElementsByClassName("collapseMsgWrapper").style.display="block"
+   if(show){
+   setShow(false)
+   }
+   else{
+    setShow(true)
+   }
+
+}
+
+
+
+
   return (
-    <Box>
-      {/* <Navbar></Navbar> */}
-      
-      <Box display={"flex"} margin={"auto"}>
-        <Heading as="h1" style={{fontFamily:"Georgia, serif", margin: "auto" }}>
+  
+    <Box  color={"#1b2437"} background={ URL="static.naukimg.com/s/7/103/i/homepageBubble.cf43a7a8.svg" }
+    backgroundImage= {URL="https://static.naukimg.com/s/7/103/i/homepageBubble.cf43a7a8.svg"}
+    backgroundPositionX= {"50%"}
+    backgroundPositionY= {"center"}
+    backgroundSize= {"cover"}
+    backgroundRepeatX= {"initial"}
+    backgroundRepeatY= {"initial"}
+    backgroundAttachment={"initial"} 
+    backgroundOrigin= {"initial"}
+    backgroundClip= {"initial"}
+    backgroundColor= {"initial"}
+    fontFamily= {"Inter"}>
+
+         <Box display={"flex"} margin={"auto"}  text-align={"center"} >
+        <Heading as="h1" font-weight= {"700"}
+               font-size= {"35px"}
+              lineHeight= {"50px"}
+              color= {"#1b2437"}
+              margin-top= {"30px"}
+              margin={"auto"}
+              font-family={"Roboto Slab"} >
           Find your dream job now
         </Heading>
     
-      </Box>
+        </Box>
+
       <br/>
       <Box display={"flex"} margin={"auto"}>
-        <p style={{fontFamily:"inherit", margin: "auto" }}>5 lakh+ jobs for you to explore</p>
+        <p style={{    fontSize: "20px",lineHeight: "24px",color:"#8292b4",fontFamily: "Inter",margin:"auto" }}>5 lakh+ jobs for you to explore</p>
       </Box>
 
       <Box
@@ -33,22 +79,33 @@ const LandingPage1 = () => {
         display="flex"
         margin="auto"
         height={"60px"}
-       alignItems={"center"}
-       marginTop="20px"
+        alignItems={"center"}
+        marginTop="20px"
         borderRadius={"27px"}
-        justifyContent={"space-around"}
+        justifyContent={"space-between"}
         boxShadow={" rgba(0, 0, 0, 0.24) 0px 3px 8px;"}
       >
-        <SearchIcon paddingTop={"0.5%"} height={"30px"}  />
-        <Input
+        <SearchIcon paddingTop={"0.5%"} height={"100%"}  />
+        <Box width={"80%"} display={"flex"} justifyContent={"space-between"}>
+        <Input 
           type="text"
-          placeholder="Enter skills / designations / companies"
+          placeholder="Enter skills / designations"
           padding={3}
-          w={"80%"}
+          w={"33%"}
           border={"none"}
+          borderRight={"1px solid lightGrey"}
         />
+        {/* <Box w={"2px"} height={"80%"} backgroundColor={"grey"}></Box> */}
+        <Select placeholder={"Select experience"}  border={"none"} borderBottom={"none"}  color= {"grey"}  width={"30%"}>
+          <option>Fresher</option>
+          <option>1 year</option>
+          <option>2 year</option>
+          
+        </Select>
+        <Input placeholder={"Enter Location"} width={"30%"} border={"none"} borderLeft={"0.5px solid lightGrey"}/>
+        </Box>
 
-        <Button background={"blue.400"} color={"white"} p={4} borderRadius={"20px"} width={"10%"}>
+        <Button background={"blue.400"} color={"white"} p={4} borderRadius={"20px"} width={"13%"} >
           Search
         </Button>
       </Box>
@@ -58,6 +115,7 @@ const LandingPage1 = () => {
         h={"200px"}
         margin={"auto"}
         marginTop={"4%"}
+        paddingLeft={"3%"}
         display={"flex"}
         alignItems={"center"}
         borderRadius={"10px"}
@@ -67,10 +125,10 @@ const LandingPage1 = () => {
         // padding={"10px"}
       >
         <Box w={"25%"} textAlign={"start"} fontSize={"20px"}>
-          <ol style={{ padding: "25px"}} >
-            <li style={{ padding: "3px", color:"black", fontWeight:"bolder"}}>Get discoverd  </li>
-            <li style={{ padding: "3px" }}>Get contacted</li>
-            <li style={{ padding: "3px" }}>Get hired</li>
+          <ol style={{ padding: "20px"}} >
+            <li style={{ padding: "3%", color:"black", fontWeight:"bolder"}}>Get discoverd ></li>
+            <li style={{ padding: "3%" }}>Get contacted</li>
+            <li style={{ padding: "3%" }}>Get hired</li>
           </ol>
         </Box>
 
@@ -84,10 +142,6 @@ const LandingPage1 = () => {
               width={"30%"}
             >
             </Image>
-          
-
-           
-
             
             <Image 
               src={"https://img.naukimg.com/logo_images/groups/v1/4156.gif"}
@@ -128,8 +182,55 @@ const LandingPage1 = () => {
             Register for free
           </Button>
         </Box>
+        
       </Box>
 
+      <div class="chatbotPopUp">
+
+
+      {  show?<div class="botmain">
+        <div id="botTop"><div><img src="https://static.naukimg.com/s/7/103/i/botIcon.9ccc1ddd.svg"/></div><div><img onClick={changeStatus} src="//static.naukimg.com/s/7/103/i/cross.8cd86aaf.svg"/></div></div>
+           <div>Hi! I am Naukri’s smart job search assistant!</div>
+           <div>
+                I see that you are looking for jobs.
+                New jobs are posted on Naukri every day.
+            </div>
+           <div>Please click on register and create an account to get the most out of Naukri!</div>
+           <button>Register</button>
+           </div>
+           :
+          //  <p>hello</p>
+        
+             <div class="collapseMsgWrapper">
+
+                  <div   class="crossWrapper"><img class="crossIcon" onClick={closePopup} src="//static.naukimg.com/s/7/103/i/cross.8cd86aaf.svg" /> </div>
+             
+                  <div class="collapseBotItem"><span class="botText">Want to apply to jobs? Register now!</span> </div>
+                  {/* <div class="collapseBotChips"> 
+
+               <button class="singleSelectChip" >Register Now</button> 
+                 </div>  */}
+               </div>
+                      
+                
+  }
+         
+     
+        <div class="floatIcon" onClick={displayMessage}>
+              <div class="floatingChatIcon">
+                  <div class="chatbotOnline">
+                        <div class="online"></div>
+                  </div>
+                  <img src="//static.naukimg.com/s/7/103/i/naukriIcon.74e6a29a.png"  class="chatbotNaukIcon" />
+              </div>
+          </div>
+
+      </div>
+      
+      <Heading as="h4" textAlign={"center"} padding={"50px"} fontSize={"30px"}>
+        Trending on Naukri today
+      </Heading>
+      <Slider2></Slider2>
       <Heading
         as="h4"
         textAlign={"center"}
@@ -146,15 +247,12 @@ const LandingPage1 = () => {
         p={"1%"}
         className={styles.jobsButton}
       >
-        <Button style={{boxShadow: "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset"}}>Full Stack Developer(308)</Button>
-        <Button style={{boxShadow: "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset"}}> Front End Developer(55)</Button>
-        <Button style={{boxShadow: "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset"}}>Back End Developer(89)</Button>
+        <Button style={{boxShadow: "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset",padding:"0px 20px 0px 20px",color:"gray"}}>Full Stack Developer(308)</Button>
+        <Button style={{boxShadow: "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset",padding:"0px 20px 0px 20px", color:"grey"}}> Front End Developer(55)</Button>
+        <Button style={{boxShadow: "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset",padding:"0px 20px 0px 20px",color:"grey"}}>Back End Developer(89)</Button>
       </Box>
       <Slider></Slider>
-      <Heading as="h4" textAlign={"center"} padding={"50px"} fontSize={"30px"}>
-        Trending on Naukri today
-      </Heading>
-      <Slider2></Slider2>
+      
       <br/>
       <Heading as="h5" textAlign={"center"} padding={"20px"} fontSize={"30px"}>
         Featured companies actively hiring
@@ -244,10 +342,6 @@ const LandingPage1 = () => {
           ></Image>
           <p style={{ marginBottom: "5%" }}>Connect with us</p>
           <Box display={"flex"}>
-            {/* <BsFacebook style={{ marginRight: "15px" }} />
-            <BsTwitter style={{ marginRight: "15px" }} />
-            <BsInstagram style={{ marginRight: "15px" }} />
-            <BsLinkedin style={{ marginRight: "15px" }} /> */}
           </Box>
         </Box>
         <Box w={"20%"} paddingTop={"3%"}>

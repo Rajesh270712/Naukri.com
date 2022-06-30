@@ -2,21 +2,20 @@
 /* position: relative; */
 
 .filterContainer{
-    /* border: 1px solid black; */
-    /* width: 24%; */
-    width: 356px;
-    margin-top: 4px;
+     /* top: 0px; */
+    /* bottom:300px; */
+    /* position:fixed; */
+    /* overflow-y:scroll; */
+    /* overflow-x:hidden;  */
+    width: 350px;
+    margin-top: 10px;
     padding: 10px 24px 8px;
-    position: relative;
-    /* display: subgrid; */
 }
 .filterContainer>div{
     margin-top:4px;
-    position: relative;
-    /* border: 1px solid black; */
 }
 .filterHeading{
-    position: relative;
+   
     color: #091e42 !important;
     font-weight: 500;
     overflow: hidden;

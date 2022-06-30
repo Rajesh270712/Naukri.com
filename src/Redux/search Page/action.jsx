@@ -3,6 +3,8 @@ export const SORT_BY_LOCATION = "SORT_BY_LOCATION"
 export const SORT_BY_JOB_TYPE = "SORT_BY_JOB_TYPE"
 export const SORT_BY_CATEGORY = "SORT_BY_CATEGORY"
 export const SORT_BY_TECH_STACK ="SORT_BY_TECH_STACK"
+export const IS_LOADING ="IS_LOADING"
+export const IS_ERROR = "IS_ERROR"
 export const getInputData =(payload) => {
     return{
         type:GET_INPUT_DATA,
@@ -35,4 +37,17 @@ export const sortByTechStack = (payload) => {
         payload
     }
 }
+
+export const isLoading = (payload=true) => {
+    return {
+        type: IS_LOADING,
+        payload
+    }
+}
+export const isError = () => {
+    return {
+        type: IS_ERROR,
+    }
+}
+
 

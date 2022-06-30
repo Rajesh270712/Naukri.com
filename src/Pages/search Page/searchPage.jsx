@@ -1,67 +1,112 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Icon } from '@chakra-ui/react';
+import { Center, Icon, SkeletonText } from '@chakra-ui/react';
 import { BsBriefcase } from 'react-icons/bs';
 import { GoLocation } from 'react-icons/go';
 import { GrDocumentText } from 'react-icons/gr';
-import { StarIcon } from '@chakra-ui/icons';
+import { ChevronLeftIcon, ChevronRightIcon, StarIcon } from '@chakra-ui/icons';
 import { useNavigate } from 'react-router-dom';
 import {
   getInputData,
+  isError,
+  isLoading,
   sortByCategory,
   sortByJobType,
   sortByLocation,
   sortByTechStack,
 } from '../../Redux/search Page/action';
-import {
-  Box,
-  Heading,
-  Text,
-  HStack,
-  GridItem,
-  Button,
-} from '@chakra-ui/react';
+import { Box, Heading, Text, HStack, GridItem, Button } from '@chakra-ui/react';
 import FilterData from './filterData';
 import './searchPage.css';
 export const SearchPage = () => {
+  const { searchData, loading, error } = useSelector(state => state);
   const searchInput = 'frontend';
   const [searchResult, setSearchResult] = useState([]);
-  const { searchData } = useSelector(state => state);
-
+  const [page, setPage] = useState(1);
+  const [lowerBound, setLowerBound] = useState(1);
+  const [upperBound, setUpperBound] = useState(15);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
     const fetchSearchInput = async () => {
       try {
+        dispatch(isLoading());
         let fetchData = await fetch(
-          `https://remotive.com/api/remote-jobs?search=${searchInput}&limit=100`
+          `https://remotive.com/api/remote-jobs?search=${searchInput}&limit=105`
         );
         let result = await fetchData.json();
         setSearchResult(result.jobs);
         dispatch(getInputData(result.jobs));
       } catch (error) {
-        console.log(error);
+        dispatch(isError());
       }
     };
 
     fetchSearchInput();
   }, []);
-  const navigate = useNavigate();
+
+  if (loading) {
+    return (
+     <Box className='loadingBox' >
+
+        <Box padding="6"  >
+          <SkeletonText mt="4" noOfLines={4} spacing="4" />
+          <SkeletonText mt="4" noOfLines={4} spacing="4" />
+          <SkeletonText mt="4" noOfLines={4} spacing="4" />
+        </Box>
+        <Box padding="6"  >
+          <SkeletonText mt="4" noOfLines={4} spacing="4" />
+          <SkeletonText mt="4" noOfLines={4} spacing="4" />
+          <SkeletonText mt="4" noOfLines={4} spacing="4" />
+        </Box>
+        <Box padding="6"  >
+          <SkeletonText mt="4" noOfLines={4} spacing="4" />
+          <SkeletonText mt="4" noOfLines={4} spacing="4" />
+          <SkeletonText mt="4" noOfLines={4} spacing="4" />
+        </Box>
+          </Box>
+      
+    );
+  }
+
+  function handleNextButton() {
+    dispatch(isLoading());
+    setPage(page + 1);
+    setLowerBound(lowerBound + 15);
+    setUpperBound(upperBound + 15);
+    dispatch(isLoading(false));
+    
+  }
+  function handlePrevButton() {
+    
+    dispatch(isLoading());
+    setPage(page - 1);
+    setLowerBound(lowerBound - 15);
+    setUpperBound(upperBound - 15);
+    dispatch(isLoading(false));
+  }
+
   function handleLocationChange(location, e) {
+    dispatch(isLoading());
     dispatch(getInputData(searchResult))(
       e.target.checked ? dispatch(sortByLocation(location)) : null
     );
   }
+
   function handleJobTypeChange(JobType, e) {
+    dispatch(isLoading());
     dispatch(getInputData(searchResult))(
       e.target.checked ? dispatch(sortByJobType(JobType)) : null
     );
   }
   function handleCategoryChange(Category, e) {
+    dispatch(isLoading());
     dispatch(getInputData(searchResult))(
       e.target.checked ? dispatch(sortByCategory(Category)) : null
     );
   }
   function handleTechStackChange(TechStack, e) {
+    dispatch(isLoading());
     dispatch(getInputData(searchResult))(
       e.target.checked ? dispatch(sortByTechStack(TechStack)) : null
     );
@@ -84,9 +129,9 @@ export const SearchPage = () => {
       <GridItem>
         <Text ml={2} className="searchPara">
           {' '}
-          1 - 20 of 101 {searchInput} Jobs
+          {lowerBound} - {upperBound} of 105 {searchInput} Jobs
         </Text>
-        {searchData.slice(0, 15).map(job => (
+        {searchData.slice(lowerBound, upperBound).map(job => (
           <div
             onClick={() => handleClick(job.id)}
             key={job.id}
@@ -131,6 +176,29 @@ export const SearchPage = () => {
             </HStack>
           </div>
         ))}
+        <Center >
+          <Button
+            disabled={lowerBound === 1}
+            onClick={handlePrevButton}
+            className="paginationButton"
+            colorScheme="blue"
+            variant="outline"
+          >
+            {' '}
+            <ChevronLeftIcon /> PREVIOUS
+          </Button>
+          <Button colorScheme="blue">{page}</Button>
+          <Button
+            disabled={upperBound >= 75}
+            onClick={handleNextButton}
+            className="paginationButton"
+            colorScheme="blue"
+            variant="outline"
+          >
+            {' '}
+            NEXT <ChevronRightIcon />{' '}
+          </Button>
+        </Center>
       </GridItem>
       <GridItem>
         <Box className="naukriAdd">

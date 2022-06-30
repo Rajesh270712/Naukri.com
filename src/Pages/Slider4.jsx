@@ -1,6 +1,6 @@
 import Carousel from "react-elastic-carousel";
 // import Item from "./Item4";
-import "./styles4.css";
+// import "./styles4.css";
 import { Box, Image} from "@chakra-ui/react";
 
 import styled from "styled-components";
@@ -11,10 +11,10 @@ const Item=styled.div`
   justify-content: center;
   align-items: center;
  
-  width: 100%;
+  width: 80%;
  border-radius:22px;
-  border:0.1px solid gray;
- padding: 2%;
+ padding: 7%;
+ box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
  
  /* :hover{
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -34,13 +34,16 @@ const breakPoints = [
 
 export const Slider4=()=> {
   return (
-    <div className="slide">
+    <div style={{fontFamily: "sans-serif",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"}}>
       <Carousel breakPoints={breakPoints}>
         {arr.map((item)=>(
 
         <Item>
-        <Box className="perdiv">
-      <h3>{item.title}</h3>
+        <Box >
+      <h3 style={{fontWeight:"bolder",fontSize:"17px"}}> {item.title}</h3>
       
       <p>{item.subtitle}</p>
 <Box display={'flex'}>

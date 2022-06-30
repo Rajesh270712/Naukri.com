@@ -1,0 +1,10 @@
+The App.js and firebase.js files should be in the src folder of the react-redux app.
+The src folder in the react-redux app should have the folder app and another folder features.
+The file in app folder should be named store,js and the feature folder should contain a file userSlice.js.
+
+INSTALLATION OF FIREBASE:
+
+npm init
+npm install --save firebase 
+
+npm install -g firebase-tools

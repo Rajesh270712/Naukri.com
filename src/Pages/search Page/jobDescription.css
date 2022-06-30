@@ -1,0 +1,98 @@
+body {
+    background-color: #fafafa !important;
+    line-height: 1;
+    font-family: Roboto,sans-serif;
+  }
+   ::-webkit-scrollbar {
+    width: 8px!important;
+    margin-right: 2px!important;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #dfe6ed;
+    border-radius: 25px;
+  }
+
+  .topBlueBar{
+    height: 86px;
+    background-color: #D4E5FF;
+   
+  }
+  .mainContainer{
+    margin-top: -50px;
+    
+  }
+  
+.companyInfo{
+    /* border: 1px solid; */
+    /* margin-top: -40px; */
+    width: 60%;
+    margin-left: 10%;
+    /* margin-top: -185px; */
+}
+
+.topJobSection{
+    background-color: #fff;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 5px 10px 2px rgb(195 192 192 / 20%);
+    box-shadow: 0 5px 10px 2px rgb(195 192 192 / 20%);
+    padding: 24px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.topJobSection>h1{
+    color: #333;
+    font-size: 20px;
+    font-weight: 700;
+}
+.topJobSection button {
+    line-height: 36px;
+    border-radius: 2px;
+    margin-left: 9px;
+}
+
+.companyName {
+    margin-top: 8px;
+    color: #333;
+    font-size: 13px;
+    font-weight: 400;
+    display: inline-block;
+   
+  }
+  
+  .searchPara {
+    font-weight: 500;
+    color: #536777;
+    font-size: 13px;
+   margin-top: 7px;
+  }
+  .description{
+    background-color: #fff;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 5px 10px 2px rgb(195 192 192 / 20%);
+    box-shadow: 0 5px 10px 2px rgb(195 192 192 / 20%);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-top: 20px;
+    padding: 24px;
+  }
+  .description > p{
+  font-size: 18px;
+  font-weight: 750;
+  margin-bottom: 8px;
+}
+.description li{
+      font-size: 14px;
+    margin-left: 17px;
+  }
+  .description > div strong{
+      font-size: 16px;
+      margin-top: 10px;
+
+  }
+  .description > div p{
+    font-size: 14px;
+    font-family: sans-serif;
+    color: #333;
+  }
+
+ 
