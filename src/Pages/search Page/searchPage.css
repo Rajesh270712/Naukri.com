@@ -95,3 +95,13 @@ body {
   color: white;
   background-color: #4b90e3 !important;
 }
+
+.loadingBox{
+  display: flex;
+  width: 100%;
+  gap: 50px;
+  flex-direction: row;
+}
+.loadingBox>div{
+  width: 33%;
+}
