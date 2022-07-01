@@ -1,9 +1,9 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {auth,provider} from "./firebase"
-import { useDispatch, useSelector} from "react-redux";
-import { setActiveUser,setUserLogOutState,selectUserName,selectUserEmail} from "./features/userSlice"
+import { auth, provider } from "./src/firebase"
+import { useDispatch, useSelector } from "react-redux";
+import { setActiveUser, setUserLogOutState, selectUserName, selectUserEmail } from "./features/userSlice";
 
 function App() {
   const dispatch = useDispatch()
@@ -12,17 +12,18 @@ function App() {
   const userEmail = useSelector(selectUserEmail)
 
   const handleSignIn = () => {
-auth.signInWithPopup(provider).then((result)=>{
-  dispatch(setActiveUser({
-    userName:result.user.displayName,
-    userEmail:result.user.email
-  }))
-})
+    auth.signInWithPopup(provider).then((result) => {
+      dispatch(setActiveUser({
+        userName: result.user.displayName,
+        userEmail: result.user.email
+      }))
+    })
   }
 
   const handleSignOut = () => {
-auth.signOut().then(()=>{(dispatch(setUserLogOutState()))
-}).catch((err) => alert(err.message))
+    auth.signOut().then(() => {
+      (dispatch(setUserLogOutState()))
+    }).catch((err) => alert(err.message))
   }
   return (
     <div className="App">
@@ -35,7 +36,7 @@ auth.signOut().then(()=>{(dispatch(setUserLogOutState()))
             <button onClick={handleSignIn}>Sign In</button>
           )
         }
-          
+
       </header>
     </div>
   );

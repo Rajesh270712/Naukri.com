@@ -12,11 +12,45 @@ import Navbar from "./componentsYashasvi/Navbar"
 import JobDescription from './Pages/search Page/jobDescription';
 import {UpdateProfilePage} from "./Pages/UpdateProfilePage"
 import {UserHomePage}  from "./Pages/UserHomePage"
+
+// ------------------------
+import {auth,provider} from "./firebase"
+import { useDispatch, useSelector} from "react-redux";
+import { setActiveUser,setUserLogOutState,selectUserName,selectUserEmail} from "./userSlice";
+// --------------------------------------------
+
 import SavedJob from './Pages/search Page/savedJobs';
+
 function App() {
+  const dispatch = useDispatch()
+
+  const userName = useSelector(selectUserName)
+  const userEmail = useSelector(selectUserEmail)
+
+  const handleSignIn = () => {
+auth.signInWithPopup(provider).then((result)=>{
+  dispatch(setActiveUser({
+    userName:result.user.displayName,
+    userEmail:result.user.email
+  }))
+  .catch((err) => console.log(err))
+})
+  }
+
+  const handleSignOut = () => {
+auth.signOut().then(()=>{(dispatch(setUserLogOutState()))
+}).catch((err) => alert(err.message))
+  }
   return (
     <ChakraProvider theme={theme}>
       <Provider store={store}>
+      {
+          userName ? (
+            <button onClick={handleSignOut}>Sign Out</button>
+          ) : (
+            <button onClick={handleSignIn}>Sign In</button>
+          )
+        }
       <Navbar/>
       <Routes>
         <Route path = "/" element={<LandingPage1 />}></Route>

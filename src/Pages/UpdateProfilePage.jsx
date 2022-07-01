@@ -1,179 +1,169 @@
-import styled from "styled-components";
-import { BiPen } from "react-icons/bi";
-import { BiBox } from "react-icons/bi";
-import { BiPhone } from "react-icons/bi";
-import { GoLocation } from 'react-icons/go';
-import { BsFillBriefcaseFill } from 'react-icons/bs';
-import { AiOutlineMail } from "react-icons/ai";
+import React from 'react';
+import styled from 'styled-components';
+import { ProfileDetails } from '../Components/ProfileDetails';
+import { ResumeOverlay } from '../Components/ResumeOverlay';
+import { useDispatch } from 'react-redux/es/exports';
+import { setEducation } from '../Redux/Education/action';
+import { useSelector } from 'react-redux/es/hooks/useSelector';
 
-const ProfileDatailsOverlay = styled.div`
-margin-left: 14%;
-margin-right: 14%;
-display: flex;
-gap: 2%;
-padding: 1.3%;
-background-color: #4A90E2;
-color: white;
-box-shadow: 0 1px 1px 0 rgb(0 0 0 / 5%), 0 1px 2px 0 rgb(0 0 0 / 10%), 0 2px 1px -2px rgb(0 0 0 / 20%);
-svg{
-    display: inline-block;
-    vertical-align: middle;
-    
-}
-`
-const ProfileImageContainer = styled.span`
-height: 50px;
-width: 60px;
-border-radius: 50px;
-border:  1px solid black;
-background-color: white;
-img{
-    height: 100%;
-    width: 100%;
-}
-`
-const DisplayContainer = styled.div`
-flex-basis: 55%;
 
+const UserDetailsOverlay = styled.div`
+  display: flex;
+  margin-left: 14%;
+  margin-right: 14%;
+  gap: 20px;
+  font-family: Roboto, sans-serif;
+  margin-top: 2%;
 `;
-const HeaderContainer = styled.div`
+const LinksWrapper = styled.div`
+  position: sticky;
+  top: 500px;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 25%;
+  padding: 2%;
+  box-shadow: 0 1px 1px 0 rgb(0 0 0 / 5%), 0 1px 2px 0 rgb(0 0 0 / 10%),
+    0 2px 20px 0 rgb(0 0 0 / 20%);
+  div {
+    display: flex;
+    justify-content: space-between;
+  }
+  .header {
+    margin-top: 4%;
     font-size: 20px;
-    font-weight: 700;
+    color: #666;
+    font-weight: 600;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 4%;
     margin-bottom: 4%;
-    font-family: Roboto,sans-serif;
+  }
 `;
-const ShortDetailsSnap = styled.div`
-display: flex;
-flex-direction : column;
-`;
-const OneWrapper = styled.div`
-display: flex;
-div{
-    flex-basis: 45%;
-}
-span{
-    font-weight: 300;
+const LineWrapper = styled.div`
+  margin-top: 4%;
+  margin-bottom: 4%;
+  .link {
+    color: #4a90e2;
+  }
+  .item {
     font-size: 13px;
-    margin-left: 4%;
-}
+    color: #666;
+    cursor: pointer;
+  }
 `;
-const TwoWrapper = styled.div`
-display: flex;
-div{
-    flex-basis: 45%;
-}
-span{
-    font-weight: 300;
-    font-size: 13px;
-    margin-left: 4%;
-}
+const UserSummaryWrapper = styled.div`
+  flex-basis: 75%;
+
+  font-family: Roboto, sans-serif;
 `;
-const ThreeWrapper = styled.div`
-display: flex;
-div{
-    flex-basis: 45%;
-}
-span{
-    font-weight: 300;
-    font-size: 13px;
-    margin-left: 4%;
-}
-`;
-const MissingDetailWrapper = styled.div`
-display: flex;
-justify-content: space-between;
-width: 80%;
+
+// ------------------------
+const EducationWrapper = styled.div`
 margin-top: 4%;
-align-items: baseline;
-.smallfont{
-    font-size: 11px;
-    
-    height: 12%;
+padding: 20px;
+box-shadow: 0 1px 1px 0 rgb(0 0 0 / 5%), 0 1px 2px 0 rgb(0 0 0 / 10%), 0 2px 20px 0 rgb(0 0 0 / 20%);
+button{
+    color: white;
+    display: inline-block;
+    background-color: #4A90E2;
+    height: 40px;
+    width: 15%;
+    margin-top: 3%;
+    border: none;
 }
-`;
-const DeterminateDiv = styled.div`
-    width: 30%;
-    height: 5px;
-    background-color: white;
-    margin-bottom: 0;
-    cursor: pointer;
-`
-const DeterminateLine = styled.div`
-    width: 80%;
-    height: 1px;
-    background-color: white;
-    cursor: pointer;
-`
-const PendingActionsContainer = styled.div`
-flex-basis:35%;
-background-color: #1a69c5;
-padding: 2%;
-.header{
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 8%;
+select{
+    height: 40px;
+    width: 40%;
+    border: 1p solid black;
+    margin-left: 1%;
+    outline: none;
 }
-.access{
-    font-weight: 300;
-    font-size: 13px;
-}
-.view{
-    font-weight: 500;
+label{
     font-size: 14px;
-    margin-top: 1.8%;   
-    margin-left: 76%;
+color: #666;
+font-weight: 500;
 }
 `;
-const ActionNumber = styled.div``;
+const Header = styled.div`
+font-size: 20px;
+color: #666;
+font-weight: 700;
+`;
 
 export const UpdateProfilePage = () => {
-    return <>
-        <ProfileDatailsOverlay>
-        <ProfileImageContainer> <img src="https://img.icons8.com/ios/50/000000/user-male-circle.png"/></ProfileImageContainer>
-        <DisplayContainer>
-            <HeaderContainer> Add Name <BiPen/></HeaderContainer>
-            <ShortDetailsSnap>
-                <OneWrapper> 
-                    <div>
-                        <GoLocation/>
-                        <span>Add Location</span>
-                    </div>
-                    <div>
-                        <BiPhone/>
-                        <span> Add Mobile Number</span>
-                    </div>
-                </OneWrapper>    
-                <TwoWrapper>
-                 <div>
-                    <BsFillBriefcaseFill/>
-                    <span>Fresher</span>
-                 </div>
-                    <div>
-                        <AiOutlineMail/>
-                        <span>test@gmail.com</span>
-                    </div>
-                </TwoWrapper>
-                <ThreeWrapper>
-                <div>
-                    <BiBox/>
-                    <span>Add availability to join</span>
-                </div>
-                </ThreeWrapper>
-            </ShortDetailsSnap>
-            <MissingDetailWrapper>
-                <div className="smallfont">Profile Completed</div>
-                <div> 40%</div>
-            </MissingDetailWrapper>
-            <DeterminateDiv></DeterminateDiv>
-            <DeterminateLine></DeterminateLine>
-        </DisplayContainer>
-        <PendingActionsContainer>
-        <div className="header">14 Pending Action(s)</div>
-        <div className="access">Verify Mobile Number</div>
-        <div className="access">Add Preferred Location</div>
-        <div className="access">Add resume</div>
-        <div className="view">VIEW ALL</div>
-        </PendingActionsContainer>
-        </ProfileDatailsOverlay>
-    </>
-}
+    
+    const dispatch = useDispatch();
+    const [selected, setSelected]  = React.useState("");
+    const handleChange = (e) => {
+        setSelected(e.target.value);
+        
+    }
+    const handleClick = () =>{
+        dispatch(setEducation(selected));
+    }
+    return (
+        <>
+            <ProfileDetails />
+
+            <UserDetailsOverlay>
+                <LinksWrapper>
+                    <div className="header"> Quick Links</div>
+                    <LineWrapper>
+                        <span className="item">Resume</span>
+                        <span className="link">UPLOAD</span>
+                    </LineWrapper>
+                    <LineWrapper>
+                        <span className="item">Resume Headline</span>
+                        <span className="link">ADD</span>
+                    </LineWrapper>
+                    <LineWrapper>
+                        <span className="item">Key Skills</span>
+                        <span className="link">ADD</span>
+                    </LineWrapper>
+                    <LineWrapper>
+                        <span className="item">Education</span>
+                        <span className="link">ADD</span>
+                    </LineWrapper>
+                    <LineWrapper>
+                        <span className="item">IT Skills</span>
+                        <span className="link">ADD</span>
+                    </LineWrapper>
+                    <LineWrapper>
+                        <span className="item">Projects</span>
+                        <span className="link">ADD</span>
+                    </LineWrapper>
+                    <LineWrapper>
+                        <span className="item">Profile Summary</span>
+                        <span className="link">ADD</span>
+                    </LineWrapper>
+                    <LineWrapper>
+                        <span className="item">Accomplishments</span>
+                    </LineWrapper>
+                    <LineWrapper>
+                        <span className="item">Career Profile</span>
+                    </LineWrapper>
+                </LinksWrapper>
+                <UserSummaryWrapper>
+                    <ResumeOverlay />
+                    <EducationWrapper>
+                        <Header>Educational Details</Header>
+                        <label> Select Education: {" "}
+                            <select name="education" id="education" onChange={handleChange}>
+                            <option value="" disabled defaultValue={true}>Select Education</option>
+                                <option value="high"> 10th</option>
+                                <option value="inter">12th</option>
+                                <option value="BSC">BSC</option>
+                                <option value="Btech"> B.Tech</option>
+                                <option value="BA">BA</option>
+                                <option value="BCOM">BCOM</option>
+                                <option value="MA">MA</option>
+                                <option value="M.Tech">M.Tech</option>
+                                <option value="M.Com">M.Com</option>
+                            </select>
+                        </label>
+                        <button onClick={handleClick}>Save</button>
+                    </EducationWrapper>
+                </UserSummaryWrapper>
+            </UserDetailsOverlay>
+        </>
+    );
+};
