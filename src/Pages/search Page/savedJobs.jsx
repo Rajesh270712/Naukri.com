@@ -20,14 +20,17 @@ const SavedJob =() => {
               .then(res=>setJobData(res))
           },[])
 return(
-            
+            <>
+        <img style={{width:"100%"}} src='https://static.naukimg.com/s/5/105/i/mnjbg.png' />
     <div  style={{margin:"50px auto", width:"50%"}} >
             {
-                jobData.map(job => (
+              jobData.map(job => (
                     <div
                       onClick={() => handleClick(job.id)}
                       key={job.id}
+                      
                       className="jobBox"
+                      
                     >
                       <Heading as="h1">{job.title}</Heading>
                       <HStack key={job.id} className="companyName" spacing="8px">
@@ -57,6 +60,7 @@ return(
                 ))
             }
         </div>
+                  </>
     )
 }
 
