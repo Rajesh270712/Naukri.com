@@ -9,21 +9,24 @@ import styled from "styled-components";
 
 
 const Item= styled.div`
-  display: flex;
-  /* justify-content: center;
-  align-items: center; */
-  height: 90%;
-  width: 90%;
-  // border:1px solid black;
- border-radius:20px;
- box-shadow: rgba(99, 99, 99, 0.2) 2px 2px 8px 2px;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 150px;
+width: 70%;
+border-radius:8px;
+border: 1px solid #EAF1F5;
+background-color:white;
+padding:15px;
 
-
- :hover{
-  // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  // box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
- }
+/* :hover{
+box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+} */
+:hover{
+box-shadow: 0px 4px 10px rgb(0 77 255 / 4%); }
+color:black;
+margin: 0 15px;
+font-size: 1em;
 `;
 
 
@@ -49,7 +52,7 @@ export const Slider=()=> {
 
         <Item>
         <Box className="perdiv">
-          <img style={{height:"70px", width:"70px"}} src={item.image} />
+          <img style={{height:"70px", width:"70px",marginTop:"10px"}} src={item.image} />
           <h4 style={{fontWeight:"bolder",fontSize:"17px"}}>{item.title}</h4>
           <Box display={'flex'}  >
           <p style={{marginRight:"10px"}}>{item.subtitle}</p>

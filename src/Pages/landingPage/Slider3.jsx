@@ -11,17 +11,20 @@ const Item= styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  
   height: 250px;
   width: 90%;
- border-radius:22px;
- box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius:8px;
+  border: 1px solid #EAF1F5;
+  padding:20px;
+  background-color:white;
+
   text-align: center;
  /* :hover{
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
  } */
  :hover{
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
- }
+  box-shadow: 0px 4px 10px rgb(0 77 255 / 4%); }
 `;
 
 
@@ -47,7 +50,7 @@ export const Slider3=()=> {
         <Box display={"flex"} flexDirection={"column"} alignItems={"center"} gap={"20px"} >
             <Box display={'flex'} w={"40%"} margin={'auto'}>
 
-            <Image src={item.image} style={{height:"30px",width:"60px"}}></Image>
+            <Image src={item.image} style={{height:"30px",width:"60px",marginTop:"10px"}}></Image>
         </Box>
       <div style={{backgroundColor:"rgba(13, 13, 13, 0.03)", borderRadius:"5px"}}>
         <h4 style={{fontWeight:"bolder",fontSize:"17px", fontFamily:"inter",marginTop:"10px"}}>{item.title}</h4>

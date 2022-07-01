@@ -1,30 +1,12 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-<<<<<<< HEAD
-import {
-  ChakraProvider,
-  theme,
-} from '@chakra-ui/react';
-=======
 
 import { ChakraProvider, theme } from '@chakra-ui/react';
 import { Routes, Route } from 'react-router-dom';
 import {SearchPage} from "./Pages/search Page/searchPage"
->>>>>>> 4cd2e7becd821fe8a257f434d10a76e88c92284d
-import LandingPage1 from "./Pages/Landingpage"
+import LandingPage1 from "./Pages/landingPage/Landingpage"
 // import { SearchPage } from './se';
 import { store } from './Redux/store';
-<<<<<<< HEAD
-
-
-function App() {
-  return (
-    <ChakraProvider theme={theme}>
-
-      <Provider store={store} >
-      <LandingPage1 />
-      {/* <SearchPage/> */}
-=======
 import Footer from "./componentsYashasvi/Footer"
 import Navbar from "./componentsYashasvi/Navbar"
 import JobDescription from './Pages/search Page/jobDescription';
@@ -47,7 +29,6 @@ function App() {
       <Footer/>
      
       
->>>>>>> 4cd2e7becd821fe8a257f434d10a76e88c92284d
       </Provider>
 
     </ChakraProvider>

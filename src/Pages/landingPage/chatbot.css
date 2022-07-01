@@ -5,7 +5,7 @@ flex-direction: column;
 z-index: 999;
 right: 24px;
 bottom: 24px;
-font-size: 30px;
+font-size: 15px;
 }
 
 
@@ -189,7 +189,7 @@ body {
     /* font-size: 18px; */
     font-family:'Times New Roman', Times, serif;
     font-weight: 500;
-    font-size: 17px;
+    font-size: 14px;
 }
 
 .botmain button{
@@ -199,7 +199,7 @@ body {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     font-family:'Times New Roman', Times, serif;
     font-weight: 500;
-    font-size: 17px;
+    font-size: 14px;
 }
 #botTop>div{
     width: 20%;
