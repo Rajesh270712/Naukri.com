@@ -12,6 +12,7 @@ import Navbar from "./componentsYashasvi/Navbar"
 import JobDescription from './Pages/search Page/jobDescription';
 import {UpdateProfilePage} from "./Pages/UpdateProfilePage"
 import {UserHomePage}  from "./Pages/UserHomePage"
+import SavedJob from './Pages/search Page/savedJobs';
 function App() {
   return (
     <ChakraProvider theme={theme}>
@@ -21,10 +22,12 @@ function App() {
         <Route path = "/" element={<LandingPage1 />}></Route>
         <Route path = "/UserHomePage" element = {<UserHomePage />}></Route>
         <Route path = "/UpdateProfilePage" element={<UpdateProfilePage/>}></Route>
+        <Route path = "/savedJob" element={ <SavedJob/>}></Route>
         <Route path="/SearchPage" element={<SearchPage />}></Route>
         <Route path="/jobDescription/:id" element={<JobDescription />}></Route>
       </Routes>
       <Footer/>
+     
       
       </Provider>
     </ChakraProvider>
