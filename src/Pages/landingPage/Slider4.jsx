@@ -12,16 +12,17 @@ const Item=styled.div`
   align-items: center;
  
   width: 80%;
- border-radius:22px;
+  border-radius:8px;
+ border: 1px solid #EAF1F5;
+ background-color:white;
  padding: 7%;
- box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
  
  /* :hover{
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
  } */
  :hover{
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
- }
+  box-shadow: 0px 4px 10px rgb(0 77 255 / 4%); }
 `;
 
 
@@ -43,10 +44,10 @@ export const Slider4=()=> {
 
         <Item>
         <Box >
-      <h3 style={{fontWeight:"bolder",fontSize:"17px"}}> {item.title}</h3>
+      <h3 style={{fontWeight:"bolder",fontSize:"17px"}}> {item.title}<span style={{marginLeft:"5px",color:"gray"}}></span></h3>
       
-      <p>{item.subtitle}</p>
-<Box display={'flex'}>
+      <p style={{color:"gray"}}>{item.subtitle}</p>
+<Box display={'flex'} marginTop={"10px"}>
     <Image src ={item.image1}
     h={'35px'}
     w={'35px'}
@@ -79,7 +80,7 @@ export const Slider4=()=> {
 const arr=[
   {
     
-    title:"Product",
+    title:"Fortune 500",
    
     subtitle:"236 are actively hiring",
    image1:"https://img.naukimg.com/logo_images/groups/v1/240920.gif",
@@ -93,7 +94,7 @@ const arr=[
   {
    
     
-    title:"Internet",
+    title:"Unicorns",
    
     subtitle:"165 are actively hiring",
     image1:"https://img.naukimg.com/logo_images/groups/v1/2641916.gif",
@@ -108,7 +109,7 @@ const arr=[
   {
    
    
-    title:"Edtech",
+    title:"Startups",
     
     subtitle:"27 are actively hiring",
     image1:"https://img.naukimg.com/logo_images/groups/v1/4638851.gif",

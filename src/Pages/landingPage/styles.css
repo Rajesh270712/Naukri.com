@@ -1,0 +1,340 @@
+.homepage .naukri-js-wdgt {
+  margin: 32px 0;
+  display: inline-block;
+  padding: 0;
+  box-shadow: none;
+  background-color: #ffffff;
+  border-radius: 4px;
+  /* padding: 0px; */
+  margin: 0px;
+  word-break: break-word;
+}
+
+  .naukri-wdgt {
+    min-width: 50px;
+    min-height: 50px;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.role-collection-wdgt .card-container .left-section {
+  position: absolute;
+  width: 420px;
+  padding-left: 107px;
+  padding-top: 57px;}
+
+  .naukri-js-wdgt * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    word-break: break-word;
+  }
+  .role-collection-wdgt .card-container .left-section .role-img {
+    height: 103px;
+    width: auto;
+}
+.role-collection-wdgt .card-container .left-section .heading {
+  width: 275px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 27px;
+  line-height: 40px;
+  color: #1b2437;
+}
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+.role-collection-wdgt .card-container .left-section .sub-heading {
+  margin-top: 8px;
+  width: 251px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 26px;
+  color: #8292b4;
+}
+.role-collection-wdgt .card-container .right-section {
+  top: -34px;
+  left: 420px;
+  position: relative;
+  height: 424px;
+  width: 592px;
+  background: #ffffff;
+  border: 1px solid #eaf1f5;
+  border-radius: 16px 6px;
+  -webkit-box-shadow: 0px 4px 10px rgb(0 77 255 / 4%);
+  box-shadow: 0px 4px 10px rgb(0 77 255 / 4%);
+}
+.role-collection-wdgt .swiper-container {
+  position: static !important;
+}
+.swiper-container {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  z-index: 1;
+}
+.role-collection-wdgt .card-container .right-section .chip-container {
+  padding-top: 50px;
+  padding-left: 47px;
+}
+div {
+  display: block;
+}
+
+
+.role-collection-wdgt .card-container .right-section .chip-container .chip-case {
+    position: relative;
+    display: -webkit-inline-flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 35%;
+    width: 40%;
+    margin-top: 20px;
+}
+.role-collection-wdgt .card-container .right-section .chip-container .chip-case .chip {
+  cursor: pointer;
+  width: 234px;
+  height: 84px;
+  background: #ffffff;
+  border: 1px solid #eaf1f5;
+  border-radius: 16px 6px;
+}
+.role-collection-wdgt .card-container .right-section .chip-container .chip-case .chip .chip-text {
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+  height: 82px;
+  left: 20px;
+  font-family: Inter;
+  font-style: normal;
+}
+.chip-count{
+  display: flex;
+  align-items: center;
+}
+.role-collection-wdgt .card-container .right-section .chip-container .chip-case .chip .chip-text .chip-heading {
+  display: block;
+  max-width: 194px;
+  overflow: hidden;
+  white-space: nowrap;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 20px;
+  color: #1b2437;
+}
+
+.homepage .naukri-js-wdgt {
+    margin: 32px 0;
+    display: inline-block;
+    padding: 0;
+    box-shadow: none;
+}
+.ab-interview-wdgt {
+  font-family: Inter;
+  font-style: normal;
+  width: 1098px;
+}
+.ab-interview-wdgt .card-container {
+  position: relative;
+  background: #ffffff;
+  display: grid;
+  width: 1098px;
+  height: 420px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.ab-interview-wdgt .card-container .one {
+  grid-column-start: 1;
+  width: 232px;
+}
+.ab-interview-wdgt .card-container .one .heading {
+  width: 232px;
+  margin-top: 97px;
+  font-weight: bold;
+  font-size: 27px;
+  line-height: 34px;
+  color: #1b2437;
+}
+.ab-interview-wdgt .card-container .one .left-image {
+  margin-top: 26px;
+}
+.ab-interview-wdgt .card-container .one .left-image .ab-img {
+  height: 153px;
+  width: auto;
+}
+.ab-interview-wdgt .card-container .two {
+  grid-column-start: 2;
+  width: 522px;
+  height: 414px;
+  background: #ffffff;
+  border: 1px solid #eaf1f5;
+  border-radius: 16px 4px;
+  -webkit-box-shadow: 0px 4px 10px rgb(2 2 3 / 4%);
+  box-shadow: 0px 4px 10px rgb(2 2 3 / 4%);
+  text-align: center;
+}
+
+
+.ab-interview-wdgt .card-container .two .card-heading {
+    padding-top: 28px;
+    padding-bottom: 24px;
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 26px;
+    text-align: center;
+    color: #1b2437;
+}
+.ab-interview-wdgt .card-container .two .chip {
+  cursor: pointer;
+  display: inline-block;
+  padding-top: 16px;
+  padding-left: 18px;
+  width: 224px;
+  margin: 0px 8px 16px 8px;
+  height: 76px;
+  background: #ffffff;
+  border: 1px solid #eaf1f5;
+  border-radius: 16px 6px;
+}
+.ab-interview-wdgt .card-container .two .chip .chip-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  float: left;
+  margin-right: 12px;
+  height: 100%;
+  height: 44px;
+  width: 44px;
+  vertical-align: middle;
+}
+.ab-interview-wdgt .card-container .two .chip .chip-image .chip-image-dim {
+  max-height: 44px;
+  max-width: 44px;
+}
+.two .chip .chip-text {
+  max-width: 260px;
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+.ab-interview-wdgt .card-container .two .chip .chip-text .chip-heading-div {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+
+.ab-interview-wdgt .card-container .two .chip .chip-text .chip-heading-div .chip-heading {
+    display: block;
+    max-width: 124px;
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 22px;
+    color: #1b2437;
+}
+
+.ab-interview-wdgt .card-container .two .chip .arrow-icon {
+  margin-left: 8px;
+  color: #8292b4;
+  height: 8px;
+  margin-top: 2px;
+  /* width: 6px;
+  height: 10px; */
+}
+.arrow-icon{
+  margin-left: 8px;
+  color: #8292b4;
+  height: 8px;
+  margin-top: 2px; 
+}
+.ab-interview-wdgt .card-container .two .chip .chip-text .chip-count {
+  font-weight: normal;
+  margin-top: 2px;
+  font-size: 13px;
+  line-height: 20px;
+  color: #8292b4;
+}
+.ab-interview-wdgt .card-container .three {
+  grid-column-start: 3;
+  width: 310px;
+  height: 416px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #eaf1f5;
+  border-radius: 16px 4px;
+  -webkit-box-shadow: 0px 4px 10px rgb(53 54 56 / 4%);
+  box-shadow: 0px 4px 10px rgb(53 54 56 / 4%);
+}
+.ab-interview-wdgt .card-container .three .card-heading {
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-top: 28px;
+  padding-bottom: 18px;
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 26px;
+  text-align: center;
+  color: #1b2437;
+}
+.ab-interview-wdgt .card-container .three .section3 {
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.ab-interview-wdgt .card-container .three .section3 .role-headline {
+  max-width: 150px;
+  overflow: hidden;
+  white-space: nowrap;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 20px;
+  color: #1b2437;
+}
+.ab-interview-wdgt .card-container .three .section3 .role-count {
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 25px;
+  color: #8292b4;
+}

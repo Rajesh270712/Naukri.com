@@ -17,6 +17,23 @@ const JobDescription = () => {
     {
         window.open(url,"_blank");
     }
+
+    const saveJob = (job) =>{
+      let data = {
+        id:job.id,
+        title:job.title,
+        company:job.company_name,
+        location:job.candidate_required_location,
+        salary:job.salary
+      }
+      fetch(`http://localhost:5000/savedJobs`, {
+        method:"POST",
+        body:JSON.stringify(data),
+        headers:{
+          "Content-Type":"Application/json"
+        }
+      })
+    }
   console.log(temp);
   return (
     <>
@@ -41,7 +58,7 @@ const JobDescription = () => {
             </Text>
             </Box>
             <Box>
-                <Button variant='outline'colorScheme='blue' >Saved</Button>
+                <Button onClick={()=>saveJob(job)} variant='outline'colorScheme='blue' >Saved</Button>
                 <Button onClick={()=>applyToSite(job.url)} colorScheme='blue' >APPLY ON COMPANY SITE</Button>
             </Box>
             </HStack>

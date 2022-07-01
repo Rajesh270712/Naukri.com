@@ -11,17 +11,20 @@ const Item= styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  
   height: 250px;
   width: 90%;
- border-radius:22px;
- box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius:8px;
+  border: 1px solid #EAF1F5;
+  padding:20px;
+  background-color:white;
+
   text-align: center;
  /* :hover{
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
  } */
  :hover{
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
- }
+  box-shadow: 0px 4px 10px rgb(0 77 255 / 4%); }
 `;
 
 
@@ -44,22 +47,22 @@ export const Slider3=()=> {
         {arr.map((item)=>(
 
         <Item>
-        <Box display={"flex"} flexDirection={"column"} alignItems={"center"} gap={"10px"} >
+        <Box display={"flex"} flexDirection={"column"} alignItems={"center"} gap={"20px"} >
             <Box display={'flex'} w={"40%"} margin={'auto'}>
 
-            <Image src={item.image}></Image>
+            <Image src={item.image} style={{height:"30px",width:"60px",marginTop:"10px"}}></Image>
         </Box>
-      <div style={{backgroundColor:"lightYellow", borderRadius:"5px"}}>
-        <h4 style={{fontWeight:"bolder",fontSize:"17px"}}>{item.title}</h4>
-        <p>
+      <div style={{backgroundColor:"rgba(13, 13, 13, 0.03)", borderRadius:"5px"}}>
+        <h4 style={{fontWeight:"bolder",fontSize:"17px", fontFamily:"inter",marginTop:"10px"}}>{item.title}</h4>
+        <p style={{color:"gray",padding:"20px"}}>
             <StarIcon color={'orange'}></StarIcon> {item.reviews}
         </p>
       </div>
-      <p>{item.subtitle}</p>
+      <p style={{color:"gray"}}>{item.subtitle}</p>
       <Button
-      background={'blue.100'}
+      background={'#F1F5FF'}
       borderRadius={"20px"}
-      color={'blue'}
+      color={'#457EFF;'}
       boxShadow={"rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px"}
       >View jobs</Button>
         </Box>
@@ -75,8 +78,8 @@ export const Slider3=()=> {
 
 const arr=[
   {
-    image:"https://img.naukimg.com/logo_images/groups/v2/42932.gif",
-    title:"Genpact",
+    image:"https://img.naukimg.com/logo_images/groups/v2/2483944.gif",
+    title:"R1 RCM",
     reviews:"4.0 | 19.1K+ reviews",
     subtitle:"Global prossional services firm",
    
@@ -84,8 +87,8 @@ const arr=[
   },
   {
    
-    image:"https://img.naukimg.com/logo_images/groups/v2/18850.gif",
-    title:"Oracle",
+    image:"https://img.naukimg.com/logo_images/groups/v2/2436002.gif",
+    title:"Xoriant",
     reviews:"3.9 | 3.5K+ reviews",
     subtitle:"Cloud technology company since 1977",
    
@@ -93,8 +96,8 @@ const arr=[
   },
   {
    
-    image:"	https://img.naukimg.com/logo_images/groups/v2/3835862.gif",
-    title:"Persistent",
+    image:"	https://img.naukimg.com/logo_images/groups/v2/1288.gif",
+    title:"Capgemini",
     reviews:"4.2 | 1.3K+ reviews",
     subtitle:"Trusted global solutions company",
    
@@ -105,8 +108,8 @@ const arr=[
     
   {
    
-    image:"https://img.naukimg.com/logo_images/groups/v2/18850.gif",
-    title:"Oracle",
+    image:"https://img.naukimg.com/logo_images/groups/v2/398058.gif",
+    title:"Amazon",
     reviews:"3.9 | 3.5K+ reviews",
     subtitle:"Cloud technology company since 1977",
    
