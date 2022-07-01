@@ -1,3 +1,11 @@
 {
-  "savedJobs": []
+  "savedJobs": [
+    {
+      "id": 1218607,
+      "title": "Experienced Unity Developer",
+      "company": "Mibo",
+      "location": "European Timezones",
+      "salary": "€45k - €70k"
+    }
+  ]
 }
