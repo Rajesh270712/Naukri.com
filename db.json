@@ -20,6 +20,27 @@
       "company": "yoldacom",
       "location": "Turkey",
       "salary": ""
+    },
+    {
+      "id": 971825,
+      "title": "Senior Front-End Engineer (JS/Graphics/3D)",
+      "company": "Spline",
+      "location": "Worldwide",
+      "salary": ""
+    },
+    {
+      "id": 1274446,
+      "title": "Founding Fullstack Engineer",
+      "company": "Hirefly",
+      "location": "USA Only",
+      "salary": ""
+    },
+    {
+      "id": 1289411,
+      "title": "Frontend Engineer",
+      "company": "xDesign",
+      "location": "UK",
+      "salary": ""
     }
   ]
 }

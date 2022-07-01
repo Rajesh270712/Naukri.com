@@ -34,7 +34,7 @@ const JobDescription = () => {
         }
       })
     }
-  console.log(temp);
+  console.log(process.env.REACT_APP_BASE_URL);
   return (
     <>
         <Box className='topBlueBar'></Box>
