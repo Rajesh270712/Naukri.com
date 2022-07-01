@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {useNavigate} from "react-router-dom";
+import { useSelector} from "react-redux";
 
 const Button = styled.button`
 color: white;
@@ -128,16 +129,19 @@ font-weight: 500;
 `
 
 export const ProfileBadgeWrapper = () => {
+    const { userdetails } = useSelector(state => state.userDetails);
     const Navigate = useNavigate();
     const handleClick = () => {
         Navigate("/UpdateProfilePage")
         console.log("clicked")
     }
     return <>
-         <ProfileImageContainer></ProfileImageContainer>
+        {/* //  <ProfileImageContainer></ProfileImageContainer> */}
         <ProfileBadge>
 
-            <div className="profileNameDiv">Jhonty Rhodes</div>
+            <div className="profileNameDiv">{userdetails.name ? userdetails.name : "Name Not Mentioned"}
+            {console.log(userdetails)}
+            </div>
             <div className="profileWrapperDiv">
                 <span>Profile Completed</span>
                 <span>40%</span>

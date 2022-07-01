@@ -143,6 +143,31 @@ margin-left: 200px;
     color: #666;
   }
 `
+const SavedJobWrapper = styled.div`
+    width: 300px;
+    box-shadow: 0 1px 1px 0 rgb(0 0 0 / 5%), 0 1px 2px 0 rgb(0 0 0 / 10%), 0 2px 20px 0 rgb(0 0 0 / 20%);
+    margin-left: 200px;
+    padding: 20px;
+    height: 200px;
+    margin-top: 40px;
+    `
+    const Sheader = styled.div`
+font-size: 14px;
+color: #666;
+font-weight: 700;
+    `;
+    const Sdetails = styled.div`
+    font-size: 13px;
+    color: #666;
+    font-weight: 500;
+    margin-top: 20px;
+    `
+    const Slink = styled.div`
+    color: #4a90e2;
+    margin-top: 20px;
+    text-align:right;
+    cursor: pointer;
+    `;
 
 
 
@@ -150,6 +175,7 @@ margin-left: 200px;
 export const UserHomePage = () => {
     const Navigate = useNavigate();
     const { searchQuery } = useSelector(state => state);
+    
     const dispatch = useDispatch();
     const [inputValue, setInputValue] = React.useState("");
 
@@ -159,6 +185,9 @@ export const UserHomePage = () => {
     }
     const handleInputChange = (e) => {
         setInputValue(e.target.value)
+    }
+    const handleSave = () => {
+      Navigate("/savedJob")
     }
   return (
     <UserHomePageDivWrapper>
@@ -208,6 +237,17 @@ export const UserHomePage = () => {
         </SalaryContainer>
       </JobsContainer>
 
+      <SavedJobWrapper>
+        <Sheader>
+          SAVED JOBS
+        </Sheader>
+        <Sdetails>
+          You can view saved jobs here
+        </Sdetails>
+        <Slink onClick={handleSave}> 
+          VIEW ALL...
+        </Slink>
+      </SavedJobWrapper>
       <CustomJobsWrapper>
         <div className='newJobs'>New Jobs in My Job Alerts</div>
         <div className='customalerts'>CREATE CUSTOM JOB ALERTS</div>
