@@ -50,10 +50,10 @@ export const Slider2=()=> {
       {/* // <div style={{boxShadow:"rgba(100, 100, 111, 0.2) 0px 7px 29px 0px", width:"90%"}} > */}
           <Box className="perdiv" textAlign={"center"} display={"flex"} flexDirection={"column"} gap={"10px"} alignItems={"center"}>
              <img style={{height:"70px", width:"70px"}} src={item.image} alt=""/>
-            <Box  display={"flex"}> <h4 style={{color: "#1b2437", fontSize:"17px",fontWeight:"bolder"}}>{item.title}</h4><span style={{color:"grey",margin:"3px 0px 0px 4px"}}>></span></Box>
+            <Box  display={"flex"}> <p style={{color: "#1b2437", fontSize:"17px",fontWeight:"bolder"}}>{item.title}</p><span style={{color:"grey",marginLeft:"5px",fontWeight:"bolder", fontSize:"17px"}}>></span></Box>
            
                <Box display={'flex'}>
-               <p style={{marginRight:"10px"}}>{item.subtitle}</p>
+               <p style={{marginRight:"10px",color:"gray"}}>{item.subtitle}</p>
                 </Box>
          </Box>
       {/* </div> */}
@@ -87,8 +87,8 @@ const arr=[
    
   },
   {
-    image:"https://img.naukri.com/logo_images/v3/54602.gif",
-    title:"Startup",
+    image:"https://static.naukimg.com/s/0/0/i/trending-naukri/project-management.svg",
+    title:"Project Management",
     subtitle:"433+ Jobs",
    
   },

@@ -43,10 +43,10 @@ export const Slider4=()=> {
 
         <Item>
         <Box >
-      <h3 style={{fontWeight:"bolder",fontSize:"17px"}}> {item.title}</h3>
+      <h3 style={{fontWeight:"bolder",fontSize:"17px"}}> {item.title}<span style={{marginLeft:"5px",color:"gray"}}>></span></h3>
       
-      <p>{item.subtitle}</p>
-<Box display={'flex'}>
+      <p style={{color:"gray"}}>{item.subtitle}</p>
+<Box display={'flex'} marginTop={"10px"}>
     <Image src ={item.image1}
     h={'35px'}
     w={'35px'}
@@ -79,7 +79,7 @@ export const Slider4=()=> {
 const arr=[
   {
     
-    title:"Product",
+    title:"Fortune 500",
    
     subtitle:"236 are actively hiring",
    image1:"https://img.naukimg.com/logo_images/groups/v1/240920.gif",
@@ -93,7 +93,7 @@ const arr=[
   {
    
     
-    title:"Internet",
+    title:"Unicorns",
    
     subtitle:"165 are actively hiring",
     image1:"https://img.naukimg.com/logo_images/groups/v1/2641916.gif",
@@ -108,7 +108,7 @@ const arr=[
   {
    
    
-    title:"Edtech",
+    title:"Startups",
     
     subtitle:"27 are actively hiring",
     image1:"https://img.naukimg.com/logo_images/groups/v1/4638851.gif",
