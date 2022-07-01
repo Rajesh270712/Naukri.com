@@ -13,15 +13,15 @@ const Item= styled.div`
   align-items: center;
   height: 150px;
   width: 80%;
- border-radius:22px;
-  // border:0.1px solid gray;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+ border-radius:8px;
+ border: 1px solid #EAF1F5;
+ background-color:white;
+ 
  /* :hover{
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
  } */
  :hover{
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
- }
+  box-shadow: 0px 4px 10px rgb(0 77 255 / 4%); }
   color:black;
   margin: 0 15px;
   font-size: 1em;
@@ -50,7 +50,7 @@ export const Slider2=()=> {
       {/* // <div style={{boxShadow:"rgba(100, 100, 111, 0.2) 0px 7px 29px 0px", width:"90%"}} > */}
           <Box className="perdiv" textAlign={"center"} display={"flex"} flexDirection={"column"} gap={"10px"} alignItems={"center"}>
              <img style={{height:"70px", width:"70px"}} src={item.image} alt=""/>
-            <Box  display={"flex"}> <p style={{color: "#1b2437", fontSize:"17px",fontWeight:"bolder"}}>{item.title}</p><span style={{color:"grey",marginLeft:"5px",fontWeight:"bolder", fontSize:"17px"}}>></span></Box>
+            <Box  display={"flex"}> <p style={{color: "#1b2437", fontSize:"17px",fontWeight:"bolder"}}>{item.title}</p><span style={{color:"grey",marginLeft:"5px",fontWeight:"bolder", fontSize:"17px"}}></span></Box>
            
                <Box display={'flex'}>
                <p style={{marginRight:"10px",color:"gray"}}>{item.subtitle}</p>
