@@ -152,12 +152,12 @@ const LandingPage1 = () => {
         justifyContent={'space-around'}
         backgroundColor={'rgba(254, 249, 244, 0.8)'}
         boxShadow={'rgba(0, 0, 0, 0.16) 0px 1px 4px'}
-        // padding={"10px"}
+      // padding={"10px"}
       >
         <Box w={'25%'} textAlign={'start'} fontSize={'20px'}>
           <ol style={{ padding: '20px' }}>
             <li style={{ padding: '3%', color: 'black', fontWeight: 'bolder' }}>
-              Get discoverd{' '}
+              Get discovered{' '}
               <span
                 style={{
                   marginLeft: '5px',
@@ -313,7 +313,7 @@ const LandingPage1 = () => {
       <Heading as="h4" textAlign={'center'} padding={'20px'} fontSize={'30px'}>
         Explore top companies hiring now
       </Heading>
-      <Slider4></Slider4> 
+      <Slider4></Slider4>
 
       <br />
       <br />
@@ -1123,7 +1123,7 @@ const LandingPage1 = () => {
           <br />
           <Box width={'90%'} display={'flex'} marginBottom={'15px'}>
             <Box marginRight={'12%'} marginBottom={'15px'}>
-              <p>Get real-time job updates & more!</p>
+              <p>{"Get real-time job updates & more!"}</p>
               <br />
               <Box
                 display={'flex'}

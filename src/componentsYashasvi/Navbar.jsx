@@ -1,5 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import {auth,provider} from "../firebase"
+import { useDispatch, useSelector} from "react-redux";
+import { setActiveUser,setUserLogOutState,selectUserName,selectUserEmail} from "../userSlice";
 
 const Anchor = styled.a`
 color:#8292B4;
@@ -35,6 +38,25 @@ text-align: center;
 `;
 
 export default function Navbar(){
+  const dispatch = useDispatch()
+
+  const userName = useSelector(selectUserName)
+  const userEmail = useSelector(selectUserEmail)
+
+  const handleSignIn = () => {
+auth.signInWithPopup(provider).then((result)=>{
+  dispatch(setActiveUser({
+    userName:result.user.displayName,
+    userEmail:result.user.email
+  }))
+  .catch((err) => console.log(err))
+})
+  }
+
+  const handleSignOut = () => {
+auth.signOut().then(()=>{(dispatch(setUserLogOutState()))
+}).catch((err) => alert(err.message))
+  }
   return(
     <div style={{display:"flex",margin:"13px 0px 13px 0px"}} >
       <div>
@@ -51,7 +73,7 @@ export default function Navbar(){
         <li><Anchor href = "https://resume.naukri.com/resume-services?fftid=100001" target="_blank">Services</Anchor></li>
         <li style={{"color":"#8292B4","marginLeft":"80px"}}>Resources</li>
         </ul>
-        <Button style={{"marginLeft":"100px"}}>Login</Button>
+        <Button onClick={handleSignIn} style={{"marginLeft":"100px"}}>Login</Button>
         <Button style={{"background":"#FF7555","color":"white","border":"none","marginLeft":"40px"}}>Register</Button>
       </div>
       </div>
