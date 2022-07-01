@@ -126,7 +126,7 @@ function displayMessage(){
       >
         <Box w={"25%"} textAlign={"start"} fontSize={"20px"}>
           <ol style={{ padding: "20px"}} >
-            <li style={{ padding: "3%", color:"black", fontWeight:"bolder"}}>Get discoverd ></li>
+            <li style={{ padding: "3%", color:"black", fontWeight:"bolder"}}>Get discovered </li>
             <li style={{ padding: "3%" }}>Get contacted</li>
             <li style={{ padding: "3%" }}>Get hired</li>
           </ol>
