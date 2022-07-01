@@ -30,7 +30,7 @@ const AppStyle = {
 export default function Footer(){
     return(
         <div>
-        <div style={{"display":"inline-flex","marginTop":"50px"}}>
+        <div style={{"display":"inline-flex","marginTop":"100px"}}>
             <div>
       <a href="https://www.naukri.com" target="_blank">
       <img style = {{"marginLeft":"100px","marginTop":"10px"}} src="https://static.naukimg.com/s/4/100/i/naukri_Logo.png" height="31" width="186" />

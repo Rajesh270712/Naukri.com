@@ -26,7 +26,7 @@ export const SearchPage = () => {
   const [searchResult, setSearchResult] = useState([]);
   const [page, setPage] = useState(1);
   const [lowerBound, setLowerBound] = useState(1);
-  const [upperBound, setUpperBound] = useState(15);
+  const [upperBound, setUpperBound] = useState(7);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
@@ -76,8 +76,8 @@ export const SearchPage = () => {
   function handleNextButton() {
     dispatch(isLoading());
     setPage(page + 1);
-    setLowerBound(lowerBound + 15);
-    setUpperBound(upperBound + 15);
+    setLowerBound(lowerBound + 7);
+    setUpperBound(upperBound + 7);
     dispatch(isLoading(false));
     
   }
@@ -85,8 +85,8 @@ export const SearchPage = () => {
     
     dispatch(isLoading());
     setPage(page - 1);
-    setLowerBound(lowerBound - 15);
-    setUpperBound(upperBound - 15);
+    setLowerBound(lowerBound - 7);
+    setUpperBound(upperBound - 7);
     dispatch(isLoading(false));
   }
 
@@ -116,7 +116,6 @@ export const SearchPage = () => {
     );
   }
   function handleClick(id) {
-    console.log(id);
     navigate(`/jobDescription/${id}`);
   }
   return (
