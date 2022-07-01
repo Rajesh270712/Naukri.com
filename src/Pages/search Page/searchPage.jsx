@@ -19,12 +19,14 @@ import { Box, Heading, Text, HStack, GridItem, Button } from '@chakra-ui/react';
 import FilterData from './filterData';
 import './searchPage.css';
 export const SearchPage = () => {
-  const { searchData, loading, error } = useSelector(state => state);
-  const searchInput = 'frontend';
+  const { searchData, loading, error } = useSelector(state => state.search);
+  const { searchQuery } =useSelector(state => state.query)
+
+  const searchInput = searchQuery;
   const [searchResult, setSearchResult] = useState([]);
   const [page, setPage] = useState(1);
   const [lowerBound, setLowerBound] = useState(1);
-  const [upperBound, setUpperBound] = useState(15);
+  const [upperBound, setUpperBound] = useState(7);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
@@ -32,7 +34,7 @@ export const SearchPage = () => {
       try {
         dispatch(isLoading());
         let fetchData = await fetch(
-          `https://remotive.com/api/remote-jobs?search=${searchInput}&limit=105`
+          `https://remotive.com/api/remote-jobs?search=${searchInput}&limit=80`
         );
         let result = await fetchData.json();
         setSearchResult(result.jobs);
@@ -68,12 +70,14 @@ export const SearchPage = () => {
       
     );
   }
-
+  if (error){
+    return <img src='https://user-images.githubusercontent.com/6059356/35678833-80566ce6-075d-11e8-9513-cc3d4233f5b1.gif' />
+  }
   function handleNextButton() {
     dispatch(isLoading());
     setPage(page + 1);
-    setLowerBound(lowerBound + 15);
-    setUpperBound(upperBound + 15);
+    setLowerBound(lowerBound + 7);
+    setUpperBound(upperBound + 7);
     dispatch(isLoading(false));
     
   }
@@ -81,8 +85,8 @@ export const SearchPage = () => {
     
     dispatch(isLoading());
     setPage(page - 1);
-    setLowerBound(lowerBound - 15);
-    setUpperBound(upperBound - 15);
+    setLowerBound(lowerBound - 7);
+    setUpperBound(upperBound - 7);
     dispatch(isLoading(false));
   }
 
@@ -112,7 +116,6 @@ export const SearchPage = () => {
     );
   }
   function handleClick(id) {
-    console.log(id);
     navigate(`/jobDescription/${id}`);
   }
   return (
@@ -127,7 +130,7 @@ export const SearchPage = () => {
       </div>
 
       <GridItem>
-        <Text ml="365px" className="searchPara">
+        <Text ml={2} className="searchPara">
           {' '}
           {lowerBound} - {upperBound} of 105 {searchInput} Jobs
         </Text>
@@ -176,7 +179,7 @@ export const SearchPage = () => {
             </HStack>
           </div>
         ))}
-        <Center ml={350}>
+        <Center >
           <Button
             disabled={lowerBound === 1}
             onClick={handlePrevButton}

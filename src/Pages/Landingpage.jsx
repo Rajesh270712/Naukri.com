@@ -389,10 +389,6 @@ function displayMessage(){
           ></Image>
           <p style={{ marginBottom: "5%" }}>Connect with us</p>
           <Box display={"flex"}>
-            {/* <BsFacebook style={{ marginRight: "15px" }} />
-            <BsTwitter style={{ marginRight: "15px" }} />
-            <BsInstagram style={{ marginRight: "15px" }} />
-            <BsLinkedin style={{ marginRight: "15px" }} /> */}
           </Box>
         </Box>
         <Box w={"20%"} paddingTop={"3%"}>

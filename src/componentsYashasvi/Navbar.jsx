@@ -36,10 +36,15 @@ text-align: center;
 
 export default function Navbar(){
   return(
-    <div>
+    <div style={{display:"flex",margin:"13px 0px 13px 0px"}} >
+      <div>
+
       <a href="https://www.naukri.com" target="_blank">
       <img style = {{"marginLeft":"180px","marginTop":"10px"}} src="https://static.naukimg.com/s/4/100/i/naukri_Logo.png" height="31" width="186" />
       </a>
+      </div>
+      <div>
+
       <ul style={UlStyle}>
         <li><Anchor href="https://www.naukri.com/browse-jobs" target="_blank">Jobs</Anchor></li>
         <li><Anchor href = "https://www.naukri.com/top-company-jobs" target="_blank">Companies</Anchor></li>
@@ -48,6 +53,7 @@ export default function Navbar(){
         </ul>
         <Button style={{"marginLeft":"100px"}}>Login</Button>
         <Button style={{"background":"#FF7555","color":"white","border":"none","marginLeft":"40px"}}>Register</Button>
+      </div>
       </div>
   )
 }

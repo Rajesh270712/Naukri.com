@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {useNavigate} from "react-router-dom";
 
 const Button = styled.button`
 color: white;
@@ -127,6 +128,11 @@ font-weight: 500;
 `
 
 export const ProfileBadgeWrapper = () => {
+    const Navigate = useNavigate();
+    const handleClick = () => {
+        Navigate("/UpdateProfilePage")
+        console.log("clicked")
+    }
     return <>
          <ProfileImageContainer></ProfileImageContainer>
         <ProfileBadge>
@@ -142,7 +148,7 @@ export const ProfileBadgeWrapper = () => {
                 <MissingDetailsContainer>14 Details missing</MissingDetailsContainer>
                 <AddDetailsContainer>ADD DETAILS</AddDetailsContainer>
             </PendingActions>
-            <Button>UPDATE PROFILE</Button>
+            <Button onClick={handleClick}>UPDATE PROFILE</Button>
 
             <ProfilePerformanceDiv>Profile Performance</ProfilePerformanceDiv>
 

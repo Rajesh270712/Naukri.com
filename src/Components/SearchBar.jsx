@@ -1,5 +1,6 @@
 
 import styled from "styled-components";
+import {Navigate} from "react-router-dom";
 
 
 const SearchComponentWrapper = styled.div`
@@ -51,14 +52,16 @@ margin: 0 10%;
 ` : ""}
 `
 
-
+const handleClick = () => {
+    return <Navigate to="/SearchPage" />
+}
 export const SearchBar = () => {
     return <>
         <SearchComponentWrapper>
             <div>Search Jobs</div>
             <SearchComponent>
                 <Input type="text" placeholder="Search Jobs by Skills, Designation, Companies" />
-                <Button inputButton>Search</Button>
+                <Button inputButton onClick={handleClick}>Search</Button>
             </SearchComponent>
         </SearchComponentWrapper>
     </>
