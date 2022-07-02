@@ -15,7 +15,7 @@ const SavedJob =() => {
       }
           const [jobData, setJobData] = useState([])
           useEffect(()=>{
-              fetch(`  http://localhost:5000/savedJobs`)
+              fetch(`https://jsonserverlive.herokuapp.com/savedJobs`)
               .then((res)=>res.json())
               .then(res=>setJobData(res))
           },[])
