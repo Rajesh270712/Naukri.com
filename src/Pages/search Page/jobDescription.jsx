@@ -26,7 +26,7 @@ const JobDescription = () => {
         location:job.candidate_required_location,
         salary:job.salary
       }
-      fetch(`http://localhost:5000/savedJobs`, {
+      fetch(`https://jsonserverlive.herokuapp.com/savedJobs`, {
         method:"POST",
         body:JSON.stringify(data),
         headers:{
